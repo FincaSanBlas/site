@@ -45,13 +45,14 @@
 
     /* RESETS */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--sans);
       color: var(--ink);
       background: var(--cream);
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
       -webkit-font-smoothing: antialiased;
     }
     a { text-decoration: none; color: inherit; }
@@ -290,13 +291,21 @@
     .quote-container {
       background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);
       box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr 380px;
+      width: 100%; box-sizing: border-box;
     }
-    .quote-main { padding: 46px 42px; width: 100%; max-width: 100%; box-sizing: border-box; }
+    .quote-main {
+      padding: 46px 42px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+      overflow: hidden;
+    }
 
     /* MODOS DE COTIZACIÓN */
     .quote-mode-selector {
       display: flex; gap: 10px; background: var(--cream); padding: 6px; border-radius: 999px;
-      margin-bottom: 36px; border: 1px solid var(--border); max-width: 540px;
+      margin-bottom: 36px; border: 1px solid var(--border); max-width: 100%; box-sizing: border-box;
     }
     .mode-btn {
       flex: 1; padding: 12px 18px; border-radius: 999px; border: 0; background: none;
@@ -305,7 +314,7 @@
     .mode-btn.active { background: var(--green); color: var(--white); box-shadow: var(--shadow-sm); }
 
     /* CAMPOS Y OPCIONES */
-    .q-group { margin-bottom: 28px; width: 100%; max-width: 100%; box-sizing: border-box; }
+    .q-group { margin-bottom: 28px; width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0; }
     .q-group label {
       display: block; font-size: 0.88rem; font-weight: 700; color: var(--green-dark); margin-bottom: 10px;
     }
@@ -318,18 +327,20 @@
       gap: 12px;
       margin-bottom: 12px;
       width: 100%;
+      box-sizing: border-box;
     }
 
     .q-row-2col > div {
-      min-width: 0; /* Previene desbordamientos en CSS Grid para elementos hijos en iOS WebKit */
+      min-width: 0;
       width: 100%;
+      box-sizing: border-box;
     }
 
-    .grid-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; width: 100%; }
+    .grid-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; width: 100%; box-sizing: border-box; }
     .opt-card {
       border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px;
       cursor: pointer; transition: 0.2s; background: var(--cream-light); display: flex; align-items: center; gap: 12px;
-      min-height: 52px; min-width: 0;
+      min-height: 52px; min-width: 0; width: 100%; box-sizing: border-box;
     }
     .opt-card:hover { border-color: var(--terracotta); background: var(--white); }
     .opt-card input[type="radio"], .opt-card input[type="checkbox"] {
@@ -338,7 +349,7 @@
     .opt-card strong { display: block; font-size: 0.85rem; color: var(--ink); line-height: 1.2; }
     .opt-card span { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
 
-    /* PREVENCIÓN DE AUTO-ZOOM EN DISPOSITIVOS MÓVILES (iOS/Android) */
+    /* PREVENCIÓN DE AUTO-ZOOM Y DESBORDAMIENTO EN DISPOSITIVOS MÓVILES */
     .input-field, select, textarea, input {
       font-size: 16px !important;
     }
@@ -351,21 +362,32 @@
     }
     .input-field:focus { border-color: var(--terracotta); background: var(--white); box-shadow: 0 0 0 4px rgba(168,72,45,0.08); }
 
-    /* CORRECCIÓN ESPECÍFICA PARA FECHA Y HORA EN iOS SAFARI / iPHONE */
+    /* CORRECCIÓN DEFICITIVA PARA FECHA Y HORA EN iOS SAFARI / iPHONE */
     input[type="date"].input-field,
     input[type="time"].input-field {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       width: 100% !important;
       max-width: 100% !important;
       min-width: 0 !important;
       box-sizing: border-box !important;
       display: block;
-      padding: 12px 12px;
+      padding: 12px 14px;
+      height: 48px;
+      background-color: var(--cream-light);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--ink);
     }
 
     input[type="date"]::-webkit-date-and-time-value,
     input[type="time"]::-webkit-date-and-time-value {
       text-align: left;
       margin: 0;
+      padding: 0;
+      line-height: 22px;
+      min-height: 22px;
     }
 
     /* ESTILOS DE VALIDACIÓN DE FORMULARIO */
@@ -593,9 +615,16 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+        box-sizing: border-box;
+      }
+
       /* Espaciado general reducido en móvil */
-      .intro, .services, .quote-section, .contact, .value-banner { padding: 65px 0; }
-      .section-head { margin-bottom: 36px; }
+      .intro, .services, .quote-section, .contact, .value-banner { padding: 60px 0; }
+      .section-head { margin-bottom: 32px; }
 
       /* Ajustes de Navegación Móvil */
       .menu-toggle { display: block; }
@@ -635,32 +664,20 @@
       .value-cards { grid-template-columns: 1fr; }
 
       /* Cotizador en Móvil */
-      .quote-main { padding: 24px 16px; }
-      .quote-summary { padding: 32px 20px; }
+      .quote-container {
+        border-radius: var(--radius-md);
+        width: 100%;
+        margin: 0 auto;
+      }
+      .quote-main { padding: 20px 14px; width: 100%; box-sizing: border-box; }
+      .quote-summary { padding: 28px 18px; }
       .quote-mode-selector { flex-direction: column; border-radius: 20px; max-width: 100%; }
       .mode-btn { padding: 10px 14px; text-align: center; }
 
       /* Apilado inteligente de filas de 2 columnas */
       .q-row-2col { grid-template-columns: 1fr !important; gap: 12px; width: 100%; }
       .q-row-2col > div { min-width: 0; width: 100%; }
-      .grid-options { grid-template-columns: 1fr; }
-
-      /* Ajuste específico para inputs de Fecha y Hora en iPhone/iOS Safari */
-      input[type="date"].input-field,
-      input[type="time"].input-field {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        padding: 12px 10px;
-        display: block;
-      }
-
-      input[type="date"]::-webkit-date-and-time-value,
-      input[type="time"]::-webkit-date-and-time-value {
-        text-align: left;
-        margin: 0;
-      }
+      .grid-options { grid-template-columns: 1fr; width: 100%; }
 
       /* Galería e Infraestructura en Móvil */
       .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -674,7 +691,6 @@
     }
 
     @media (max-width: 576px) {
-      .container { width: 92%; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .copyright { flex-direction: column; text-align: center; gap: 8px; }
       
@@ -1369,21 +1385,41 @@
 
     function initDatePickers() {
       const today = new Date();
+      
+      // Mañana para visitas
       const tomorrow = new Date(today);
       tomorrow.setDate(tomorrow.getDate() + 1);
       const tomorrowStr = tomorrow.toISOString().split('T')[0];
-      
-      // Configurar mínimo para ambas entradas de visitas (Paso a Paso y Texto Libre)
-      ['visitDate', 'visitDateFree'].forEach(id => {
-        const input = document.getElementById(id);
-        if (input) input.setAttribute('min', tomorrowStr);
-      });
 
-      const todayStr = today.toISOString().split('T')[0];
+      // Fecha sugerida por defecto para visitas (3 días a futuro)
+      const defaultVisit = new Date(today);
+      defaultVisit.setDate(defaultVisit.getDate() + 3);
+      const defaultVisitStr = defaultVisit.toISOString().split('T')[0];
+
+      // Fecha sugerida por defecto para el evento (30 días a futuro)
+      const defaultEvent = new Date(today);
+      defaultEvent.setDate(defaultEvent.getDate() + 30);
+      const defaultEventStr = defaultEvent.toISOString().split('T')[0];
+
+      // Asignar mínimo y valor inicial sugerido para Fecha de Evento
       const eventDateInput = document.getElementById('eventDate');
       if (eventDateInput) {
-        eventDateInput.setAttribute('min', todayStr);
+        eventDateInput.setAttribute('min', today.toISOString().split('T')[0]);
+        if (!eventDateInput.value) {
+          eventDateInput.value = defaultEventStr;
+        }
       }
+
+      // Asignar mínimo y valor inicial sugerido para Fechas de Visita
+      ['visitDate', 'visitDateFree'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+          input.setAttribute('min', tomorrowStr);
+          if (!input.value) {
+            input.value = defaultVisitStr;
+          }
+        }
+      });
     }
 
     function validatePhoneInput(input) {
@@ -1599,7 +1635,7 @@
         const textVal = document.getElementById('freeText').value.trim() || 'Deseo información general para un evento.';
         const visitDateVal = document.getElementById('visitDateFree').value || 'Sin agendar por el momento';
 
-        message = `*SOLICITUD LIBRE DE EVENTO - FINCA SAN BLAS* 🌿\n\n` +
+        message = `*SOLICITUD LIBRE DE EVENTO - FINCA SAN BLAS* \n\n` +
                   `👤 *Nombre:* ${name}\n` +
                   `📱 *WhatsApp:* ${phone}\n\n` +
                   `📝 *Detalles de mi evento:*\n${textVal}\n\n` +
