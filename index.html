@@ -740,7 +740,7 @@
         <span class="eyebrow">Toluca</span>
         <h1>¿Planeas un evento?<span>Hazlo sencillo.</span></h1>
         <p class="hero-copy">
-          Un espacio privado con salón, jardín, corredor de cantera, cocina equipada, barra de servicio, estacionamiento interno e iluminación ambiental cálida.
+          Un espacio privado con salón, jardín, corredor de cantera, cocina equipada, barra de servicio, estacionamiento interno y más.
         </p>
 
         <div class="hero-actions">
@@ -770,7 +770,7 @@
           </div>
           <div class="v-card">
             <h4>Detalles Artesanales</h4>
-            <p>Lavabos de talavera y acabados tradicionales cálidos.</p>
+            <p>Lavabos de talavera y acabados tradicionales.</p>
           </div>
           <div class="v-card">
             <h4>Iluminación Acogedora</h4>
@@ -778,13 +778,13 @@
           </div>
           <div class="v-card">
             <h4>Flexibilidad Total</h4>
-            <p>Elige nuestros paquetes completos o complementa con tus propios proveedores.</p>
+            <p>Elige nuestros servicios y paquetes o complementa con tus propios proveedores.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 1: CONOCE LAS INSTALACIONES (INTRODUCCIÓN + GALERÍA FOTOGRÁFICA) -->
+    <!-- CONOCE LAS INSTALACIONES (INTRODUCCIÓN + GALERÍA FOTOGRÁFICA) -->
     <section class="intro" id="espacio">
       <div class="container">
         <div class="section-head">
@@ -860,7 +860,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: SERVICIOS Y EQUIPAMIENTO -->
+    <!-- SERVICIOS Y EQUIPAMIENTO -->
     <section class="services" id="servicios">
       <div class="container">
         <div class="section-head">
@@ -953,7 +953,7 @@
         <div class="section-head">
           <span class="eyebrow">Cotizador Digital Finca San Blas</span>
           <h2>Arma la propuesta de tu evento.</h2>
-          <p>Selecciona tus preferencias paso a paso o redacta tu idea. Recibirás tu presupuesto directo en WhatsApp.</p>
+          <p>Selecciona tus preferencias paso a paso o redactanos tu idea. Recibirás tu presupuesto directo en WhatsApp.</p>
         </div>
 
         <div class="quote-container" id="quoteContainer">
@@ -963,7 +963,7 @@
             
             <!-- CAMBIO DE MODO -->
             <div class="quote-mode-selector">
-              <button class="mode-btn active" id="btnModeStep" type="button" onclick="setMode('step')">Paso a Paso (Interactivo)</button>
+              <button class="mode-btn active" id="btnModeStep" type="button" onclick="setMode('step')">Paso a Paso</button>
               <button class="mode-btn" id="btnModeText" type="button" onclick="setMode('text')">Escribir mi idea libremente</button>
             </div>
 
@@ -1062,7 +1062,7 @@
                   <label>3. Presupuesto estimado para la propuesta:</label>
                   <div class="grid-options" style="margin-bottom: 10px;">
                     <label class="opt-card"><input type="radio" name="budget" value="Menos de $15,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Esencial</strong><span>< $15,000 MXN</span></div></label>
-                    <label class="opt-card"><input type="radio" name="budget" value="$15,000 a $25,000 MXN" checked onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Recomendado</strong><span>$15k - $25k MXN</span></div></label>
+                    <label class="opt-card"><input type="radio" name="budget" value="$15,000 a $25,000 MXN" checked onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Estándar</strong><span>$15k - $25k MXN</span></div></label>
                     <label class="opt-card"><input type="radio" name="budget" value="$25,000 a $40,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Prémium</strong><span>$25k - $40k MXN</span></div></label>
                     <label class="opt-card"><input type="radio" name="budget" value="Custom" id="budgetCustomRadio" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Ingresar monto</strong><span>Especificar cantidad</span></div></label>
                   </div>
@@ -1079,7 +1079,7 @@
 
                 <!-- 4. PALETA DE COLORES Y TEMÁTICA -->
                 <div class="q-group">
-                  <label for="colorPalette">4. Paleta de colores o temática visual: <span>(Opcional)</span></label>
+                  <label for="colorPalette">4. Paleta de colores o temática visual: <span>(Opcional en caso de requerir el servicio de decoración)</span></label>
                   <input type="text" id="colorPalette" class="input-field" placeholder="Ej. Blanco lino, tonos eucalipto, dorado, rústico terracota..." oninput="updateSummary()">
                 </div>
 
@@ -1089,8 +1089,8 @@
                   <div class="grid-options">
                     <label class="opt-card"><input type="radio" name="tent" value="Carpa estructurada completa" checked onchange="updateSummary()"> <div><strong>Carpa Completa</strong><span>Protección viento/lluvia</span></div></label>
                     <label class="opt-card"><input type="radio" name="tent" value="Toldo ligero para sol" onchange="updateSummary()"> <div><strong>Toldo Ligero</strong><span>Solo para sol</span></div></label>
-                    <label class="opt-card"><input type="radio" name="tent" value="Uso exclusivo salón techado" onchange="updateSummary()"> <div><strong>Sin Carpa</strong><span>Uso de salón</span></div></label>
-                    <label class="opt-card"><input type="radio" name="tent" value="Aconsejar en la visita" onchange="updateSummary()"> <div><strong>Por definir</strong><span>Evaluar en visita</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Sin Carpa, uso de salón" onchange="updateSummary()"> <div><strong>Sin Carpa</strong><span>Uso de salón</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Por definir" onchange="updateSummary()"> <div><strong>Por definir</strong><span>Evaluar en visita</span></div></label>
                   </div>
                 </div>
 
@@ -1100,14 +1100,14 @@
                   <div class="grid-options">
                     <label class="opt-card"><input type="radio" name="furniture" value="Rústico Elegante (Crossback/Madera)" checked onchange="updateSummary()"> <div><strong>Rústico Elegante</strong><span>Silla Crossback / Madera</span></div></label>
                     <label class="opt-card"><input type="radio" name="furniture" value="Clásico (Silla Tiffany)" onchange="updateSummary()"> <div><strong>Clásico Elegante</strong><span>Silla Tiffany</span></div></label>
-                    <label class="opt-card"><input type="radio" name="furniture" value="Práctico Acojinado" onchange="updateSummary()"> <div><strong>Práctico</strong><span>Acojinado versátil</span></div></label>
-                    <label class="opt-card"><input type="radio" name="furniture" value="Ver catálogo en Finca" onchange="updateSummary()"> <div><strong>Ver Catálogo</strong><span>En cita presencial</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Sillas Tipo Sansonite" onchange="updateSummary()"> <div><strong>Práctico</strong><span>Sillas Tipo Sansonite</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Por definir" onchange="updateSummary()"> <div><strong>Por definir</strong></div></label>
                   </div>
                 </div>
 
                 <!-- 7. ÁREAS Y MESAS ESPECIALES -->
                 <div class="q-group">
-                  <label>7. Áreas y mesas especiales a considerar: <span>(Selecciona las que requieras)</span></label>
+                  <label>7. Áreas y mesas especiales a considerar: <span>(Opcional: selecciona las que requieras)</span></label>
                   <div class="grid-options">
                     <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa Principal / Padrinos" onchange="updateSummary()"> <div><strong>Mesa Principal</strong><span>Padrinos / Homenajeados</span></div></label>
                     <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa de Pastel" onchange="updateSummary()"> <div><strong>Mesa de Pastel</strong><span>Espacio destacado</span></div></label>
@@ -1118,16 +1118,17 @@
 
                 <!-- 8. BANQUETE & MESEROS -->
                 <div class="q-group">
-                  <label>8. Alimentos y Servicio de Meseros:</label>
+                  <label>8. Alimentos y Servicio de Meseros: <span>(En caso de elegir el servicio de Finca San Blas, se te proporcionará el catálogo una vez que envies esta cotización)</span></label>
                   <div class="q-row-2col">
                     <select id="foodFormat" class="input-field" onchange="updateSummary()">
-                      <option value="Plato servido a la mesa (1 a 3 tiempos)">Plato servido a la mesa</option>
-                      <option value="Buffet / Taquiza / Cazuelas">Buffet / Taquiza / Cazuelas</option>
-                      <option value="Uso de cocina industrial para mi catering">Catering propio (uso cocina)</option>
+                      <option value="Plato servido a la mesa (1 a 4 tiempos)">Plato servido a la mesa (1 a 4 tiempos)</option>
+                      <option value="Servicio de Alimentos/Catering de Finca San Blas">Servicio de Alimentos/Catering Finca San Blas</option>
+                      <option value="Loza de cubiertos, cristalería/vasos y platos">Loza de cubiertos, cristalería/vasos y platos</option>
+                      <option value="Uso de cocina para mi catering">Catering propio (uso cocina)</option>
                       <option value="Aún no lo decido">Aún por definir</option>
                     </select>
                     <select id="serverOption" class="input-field" onchange="updateSummary()">
-                      <option value="Incluir equipo completo de meseros (1/20 p)" selected>Incluir equipo de meseros</option>
+                      <option value="Incluir equipo completo de meseros" selected>Incluir equipo completo de meseros</option>
                       <option value="Solo apoyo básico de barra">Solo apoyo básico de barra</option>
                       <option value="Yo contrataré meseros">Tengo mis meseros</option>
                     </select>
@@ -1138,9 +1139,9 @@
                 <div class="q-group">
                   <label>9. Detalles de Audio y Música para el evento:</label>
                   <select id="audioOption" class="input-field" onchange="updateSummary()">
-                    <option value="Llevaré DJ Profesional (requiere instalación completa)">Llevaré mi propio DJ profesional</option>
-                    <option value="Llevaré Grupo Musical / Banda en vivo (solo requiere conexión eléctrica)">Traeré Grupo Musical en vivo (solo requiere conexión)</option>
-                    <option value="Requiero Cabina de Audio ambiental de la Finca">Deseo contratar audio/música ambiental de la Finca</option>
+                    <option value="Llevaré DJ Profesional (requiere instalación completa)">Llevaré mi propio DJ profesional (solo requiere conexión eléctrica)</option>
+                    <option value="Llevaré Grupo Musical / Banda en vivo (solo requiere conexión eléctrica)">Traeré Grupo Musical en vivo (solo requiere conexión eléctrica)</option>
+                    <option value="Requiero Equipo de Audio ambiental de la Finca">Deseo contratar audio/música ambiental de la Finca</option>
                     <option value="Sin música especial / Por definir">Por definir / Sin requisitos especiales</option>
                   </select>
                 </div>
@@ -1149,9 +1150,9 @@
                 <div class="q-group">
                   <label>10. Complementos y Servicios de Logística: <span>(Opcionales)</span></label>
                   <div class="grid-options">
-                    <label class="opt-card"><input type="checkbox" class="extra-check" value="Calefactores de jardín" onchange="updateSummary()"> <div><strong>Calefactores</strong><span>Ideales para la tarde</span></div></label>
                     <label class="opt-card"><input type="checkbox" class="extra-check" value="Personal de Seguridad y acceso" onchange="updateSummary()"> <div><strong>Personal de Seguridad</strong><span>Control de acceso</span></div></label>
                     <label class="opt-card"><input type="checkbox" class="extra-check" value="Control de Estacionamiento (Valet/Logística)" onchange="updateSummary()"> <div><strong>Control Estacionamiento</strong><span>Logística de autos</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="extra-check" value="Calefactores de jardín" onchange="updateSummary()"> <div><strong>Calefactores</strong><span>Ideales para la tarde</span></div></label>
                   </div>
                 </div>
 
