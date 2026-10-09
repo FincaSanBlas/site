@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finca San Blas — Salón & Jardín privado para eventos en Cacalomacán, Toluca. Un entorno rústico elegante con cocina equipada, salón, jardín y estacionamiento.">
+  <meta name="theme-color" content="#1a382e">
+  <title>Finca San Blas | Salón, Jardín & Eventos Privados en Toluca</title>
+
+
+  <link rel="icon" href="resources/logo/logo_finca.jpeg">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* PALETA DE COLORES EXTRAÍDA DE LAS FOTOS REALES DE FINCA SAN BLAS */
+      --green-dark: #122821;       /* Verde profundo vegetal */
+      --green: #1a382e;            /* Verde clásico Finca */
+      --green-soft: #eaf0ed;       /* Fondo suave herbal */
+      --terracotta: #a8482d;       /* Tono barro artesanal y macetas */
+      --terracotta-dark: #82341d;  /* Barro tostado */
+      --amber-glow: #e28d28;      /* Luz cálida de focos vintage y arbotantes */
+      --amber-light: #f5cf8e;     /* Brillo ámbar suave */
+      --cantera: #d8cebe;          /* Cantera clara y acabado de columnas */
+      --cream: #f6f1e8;            /* Crema de muros rústicos */
+      --cream-light: #fbf8f3;      /* Lino claro de fondo */
+      --talavera-blue: #1c3d5a;    /* Azul cerámico de Talavera */
+      --ink: #1e2220;              /* Texto principal */
+      --muted: #616964;            /* Texto secundario */
+      --white: #ffffff;
+      
+      --border: rgba(168, 72, 45, 0.15);
+      --border-amber: rgba(226, 141, 40, 0.35);
+      --shadow-sm: 0 4px 18px rgba(18, 40, 33, 0.06);
+      --shadow: 0 20px 50px rgba(18, 40, 33, 0.14);
+      --radius-sm: 14px;
+      --radius-md: 22px;
+      --radius-lg: 32px;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+    }
+
+    
+
+    /* RESETS */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button, input, select, textarea { font: inherit; }
+
+    /* LAYOUT BASE */
+    .container { width: min(1200px, 92%); margin: auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--terracotta); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--terracotta); }
+    
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.03; }
+    h2 { font-size: clamp(2.5rem, 4.8vw, 4.5rem); color: var(--green-dark); }
+    h2 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+    
+    .section-head { max-width: 740px; margin-bottom: 50px; }
+    .section-head p { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
+
+    .brand-logo-full {
+      height: 52px;
+      max-width: 200px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    /* NAVEGACIÓN */
+    .nav {
+      position: absolute; top: 0; left: 0; width: 100%; z-index: 100;
+      padding: 24px 0; color: var(--white);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-mark {
+      width: 48px; height: 48px; border: 1.5px solid var(--amber-light);
+      border-radius: 50%; display: grid; place-items: center;
+      font-family: var(--serif); font-size: 1.6rem; color: var(--amber-light);
+      background: rgba(18, 40, 33, 0.55); backdrop-filter: blur(10px);
+    }
+    .brand-text strong { display: block; font-family: var(--serif); font-size: 1.45rem; line-height: 0.95; letter-spacing: 0.02em; color: var(--white); }
+    .brand-text span { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.9; color: var(--amber-light); }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 0.88rem; font-weight: 500; }
+    .nav-links a { opacity: 0.9; transition: 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--amber-light); }
+    .nav-cta {
+      padding: 12px 22px; border: 1px solid var(--amber-light);
+      border-radius: 999px; font-weight: 700; font-size: 0.82rem;
+      color: var(--amber-light); background: rgba(18, 40, 33, 0.4); backdrop-filter: blur(8px);
+      transition: 0.3s;
+    }
+    .nav-cta:hover { background: var(--terracotta); color: var(--white); border-color: var(--terracotta); }
+    .menu-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+
+    /* MARCO CIRCULAR PARA EL LOGO */
+    .brand-mark-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--amber-light, #f5cf8e); /* Borde dorado/ámbar elegante */
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #be4826; /* Color terracota que empareja con el fondo de tu logo */
+    }
+
+    .brand-mark-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Recorta la imagen limpiamente en el círculo */
+      display: block;
+    }
+
+    /* HERO */
+    .hero { min-height: 850px; position: relative; color: var(--white); display: grid; align-items: end; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(14, 30, 25, 0.72) 0%, rgba(14, 30, 25, 0.5) 50%, rgba(14, 30, 25, 0.95) 100%),
+        url("resources/images/IMG 1 - 00000001 (copy 1).png") center/cover no-repeat;
+    }
+    .hero-content { position: relative; z-index: 2; padding: 180px 0 80px; max-width: 840px; }
+    .hero h1 { font-size: clamp(3.8rem, 8vw, 7.5rem); margin: 20px 0 24px; letter-spacing: -0.03em; font-weight: 500; }
+    .hero h1 span { display: block; color: var(--amber-light); font-style: italic; font-weight: 400; }
+    .hero-copy { font-size: 1.2rem; max-width: 640px; color: rgba(255, 255, 255, 0.92); font-weight: 400; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
+
+    /* BOTONES GENERALES */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 56px; padding: 0 28px; border-radius: 999px;
+      font-weight: 700; font-size: 0.88rem; transition: 0.25s ease; border: 1px solid transparent;
+      cursor: pointer; text-align: center;
+    }
+    .btn-terracotta { background: var(--terracotta); color: var(--white); }
+    .btn-terracotta:hover { background: var(--terracotta-dark); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(168, 72, 45, 0.35); }
+    .btn-amber { background: var(--amber-glow); color: var(--green-dark); font-weight: 700; }
+    .btn-amber:hover { background: var(--amber-light); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(226, 141, 40, 0.35); }
+    .btn-light { border-color: rgba(255, 255, 255, 0.4); color: var(--white); background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
+    .btn-light:hover { background: rgba(255, 255, 255, 0.2); }
+
+    /* CENTRAR ELEMENTOS Y TEXTO DE HERO-META */
+    .hero-meta {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 26px 0 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Ajustado a 3 columnas iguales */
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      text-align: center; /* Centra el texto de todo el contenedor */
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.82rem;
+    }
+
+    .hero-meta div {
+      text-align: center; /* Centra el texto dentro de cada columna */
+    }
+
+    .hero-meta strong {
+      display: block;
+      color: var(--amber-light);
+      font-size: 1.15rem;
+      font-family: var(--serif);
+      margin-bottom: 2px;
+      text-align: center;
+    }
+
+    /* RESPONSIVO PARA PANTALLAS PEQUEÑAS */
+    @media (max-width: 768px) {
+      .hero-meta {
+        grid-template-columns: 1fr; /* Se apila verticalmente y se mantiene centrado */
+        gap: 20px;
+      }
+    }
+    /* BANNER "HAZLO SENCILLO" */
+    .value-banner {
+      background: var(--green-dark); color: var(--white); padding: 80px 0;
+      position: relative; overflow: hidden; border-bottom: 3px solid var(--terracotta);
+    }
+    .value-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .value-quote {
+      font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 500;
+      line-height: 1.15; color: var(--cream); border-left: 3px solid var(--amber-glow); padding-left: 28px;
+    }
+    .value-quote span { color: var(--amber-light); font-style: italic; display: block; margin-top: 12px; font-size: 0.7em; }
+    .value-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .v-card {
+      background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm); padding: 22px; backdrop-filter: blur(5px);
+    }
+    .v-card h4 { color: var(--amber-light); font-size: 1.3rem; margin-bottom: 6px; }
+    .v-card p { font-size: 0.82rem; color: rgba(255,255,255,0.78); }
+
+    /* INTRODUCCIÓN Y ESPACIO REAL */
+    .intro { padding: 120px 0 100px; background: var(--cream-light); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .intro-text { font-size: 1.1rem; color: var(--muted); margin: 20px 0 32px; }
+    .feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .feature { padding: 20px 16px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+    .feature b { display: block; color: var(--terracotta); font-size: 0.98rem; font-family: var(--serif); }
+    .feature span { font-size: 0.78rem; color: var(--muted); }
+    
+    .photo-grid-custom {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; height: 580px;
+    }
+    .photo-grid-custom .img-large {
+      grid-column: 1 / -1; height: 320px; border-radius: var(--radius-md); overflow: hidden;
+      box-shadow: var(--shadow-sm); position: relative;
+    }
+    .photo-grid-custom .img-small {
+      height: 246px; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm);
+    }
+    .photo-badge {
+      position: absolute; left: 20px; bottom: 20px; background: rgba(255, 253, 249, 0.94);
+      padding: 16px 20px; border-radius: var(--radius-sm); max-width: 280px; backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+    }
+    .photo-badge strong { font-family: var(--serif); font-size: 1.4rem; color: var(--terracotta); display: block; line-height: 1; }
+    .photo-badge span { font-size: 0.76rem; color: var(--muted); margin-top: 4px; display: block; }
+
+    /* GALERÍA DE INSTALACIONES REALES */
+    /* ESTILOS PARA LA GALERÍA DE INSTALACIONES */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-card {
+      position: relative;
+      height: 350px;
+      border-radius: var(--radius-md, 22px);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(14, 40, 33, 0.05) 30%, rgba(14, 40, 33, 0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      color: #ffffff;
+    }
+
+    .gallery-overlay span {
+      color: var(--amber-light, #f5cf8e);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .gallery-overlay h3 {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+      color: #ffffff;
+      font-family: var(--serif, "Cormorant Garamond", serif);
+      line-height: 1.1;
+    }
+
+    .gallery-overlay p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.3;
+    }
+
+    /* RESPONSIVO PARA MÓVILES Y TABLETS */
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-card {
+        height: 290px;
+      }
+    }
+
+    /* SERVICIOS Y DETALLES DE INSTALACIONES */
+    .services { padding: 120px 0; background: var(--white); }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .service {
+      border: 1px solid var(--border); border-radius: var(--radius-md); padding: 32px 26px;
+      transition: 0.3s; background: var(--cream-light); display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .service:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--amber-glow); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 14px; background: var(--green-soft);
+      display: grid; place-items: center; color: var(--terracotta); font-size: 1.3rem; margin-bottom: 22px;
+    }
+    .service h3 { font-size: 1.55rem; color: var(--green-dark); margin-bottom: 8px; }
+    .service p { font-size: 0.84rem; color: var(--muted); }
+
+    /* COTIZADOR INTERACTIVO DUAL */
+    .quote-section { padding: 120px 0; background: var(--cream); position: relative; }
+    .quote-container {
+      background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);
+      box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr 380px;
+    }
+    .quote-main { padding: 50px 48px; }
+
+    /* MODOS DE COTIZACIÓN */
+    .quote-mode-selector {
+      display: flex; gap: 10px; background: var(--cream); padding: 6px; border-radius: 999px;
+      margin-bottom: 36px; border: 1px solid var(--border); max-width: 540px;
+    }
+    .mode-btn {
+      flex: 1; padding: 12px 18px; border-radius: 999px; border: 0; background: none;
+      font-size: 0.84rem; font-weight: 700; color: var(--muted); cursor: pointer; transition: 0.25s;
+    }
+    .mode-btn.active { background: var(--green); color: var(--white); box-shadow: var(--shadow-sm); }
+
+    /* CAMPOS Y OPCIONES */
+    .q-group { margin-bottom: 28px; }
+    .q-group label {
+      display: block; font-size: 0.88rem; font-weight: 700; color: var(--green-dark); margin-bottom: 10px;
+    }
+    .q-group label span { color: var(--muted); font-weight: 400; font-size: 0.8rem; margin-left: 6px; }
+
+    .grid-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .opt-card {
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px;
+      cursor: pointer; transition: 0.2s; background: var(--cream-light); display: flex; align-items: center; gap: 12px;
+    }
+    .opt-card:hover { border-color: var(--terracotta); background: var(--white); }
+    .opt-card input[type="radio"], .opt-card input[type="checkbox"] {
+      accent-color: var(--terracotta); width: 18px; height: 18px;
+    }
+    .opt-card strong { display: block; font-size: 0.85rem; color: var(--ink); }
+    .opt-card span { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+
+    .input-field {
+      width: 100%; border: 1.5px solid var(--border); background: var(--cream-light);
+      border-radius: var(--radius-sm); padding: 14px 16px; outline: none; color: var(--ink);
+      font-size: 0.92rem; transition: 0.2s;
+    }
+    .input-field:focus { border-color: var(--terracotta); background: var(--white); box-shadow: 0 0 0 4px rgba(168,72,45,0.08); }
+
+    /* ESTILOS DE VALIDACIÓN DE FORMULARIO */
+    .input-field.invalid {
+      border-color: #d93838 !important;
+      background-color: #fff8f8 !important;
+    }
+
+    .error-msg {
+      display: none;
+      color: #d93838;
+      font-size: 0.74rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .error-msg.visible {
+      display: block;
+    }
+
+    /* LATERAL DE RESUMEN */
+    .quote-summary {
+      background: var(--green-dark); color: var(--white); padding: 48px 36px;
+      display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid var(--border);
+    }
+    .summary-head h3 { font-size: 2.2rem; color: var(--amber-light); margin-bottom: 8px; }
+    .summary-head p { font-size: 0.82rem; color: rgba(255,255,255,0.72); }
+    .summary-list { list-style: none; margin: 28px 0; display: grid; gap: 12px; font-size: 0.82rem; }
+    .summary-list li {
+      display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 8px;
+    }
+    .summary-list li span:first-child { color: rgba(255,255,255,0.68); }
+    .summary-list li span:last-child { color: var(--amber-light); font-weight: 600; text-align: right; max-width: 180px; }
+    .summary-note { font-size: 0.74rem; color: rgba(255,255,255,0.55); text-align: center; margin-top: 14px; }
+
+    /* OCULTAR RESUMEN Y AMPLIAR FORMULARIO EN MODO TEXTO LIBRE */
+    .quote-container.mode-text-active {
+      grid-template-columns: 1fr !important;
+    }
+
+    .quote-container.mode-text-active .quote-summary {
+      display: none !important;
+    }
+
+    /* CONTACTO Y UBICACIÓN */
+    .contact { padding: 110px 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: center; }
+    .contact-info { display: grid; gap: 24px; margin-top: 36px; }
+    .contact-item { display: flex; gap: 18px; align-items: flex-start; }
+    .contact-item .icon {
+      width: 46px; height: 46px; border-radius: 50%; background: var(--green-soft);
+      display: grid; place-items: center; color: var(--terracotta); font-size: 1.2rem; flex: none;
+    }
+    .contact-item strong { display: block; font-size: 0.9rem; color: var(--green-dark); }
+    .contact-item span { font-size: 0.84rem; color: var(--muted); }
+    .map-box { height: 420px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+
+    /* FOOTER */
+    footer { background: #0e1e18; color: var(--white); padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: start; }
+    .footer-links { display: flex; gap: 30px; color: rgba(255,255,255,0.65); font-size: 0.82rem; }
+    .footer-links a:hover { color: var(--amber-light); }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.08); margin-top: 50px; padding-top: 24px;
+      color: rgba(255,255,255,0.4); font-size: 0.75rem; display: flex; justify-content: space-between;
+    }
+
+    /* FOOTER ESTRUCTURADO Y ORGANIZADO */
+    footer {
+      background: #0e1e18;
+      color: var(--white);
+      padding: 70px 0 30px;
+      border-top: 3px solid var(--terracotta);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.8fr 1.1fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      max-width: 300px;
+    }
+
+    .footer-badge {
+      display: inline-block;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-badge img {
+      max-width: 130px;
+      height: auto;
+      border: 0;
+      display: block;
+    }
+
+    .footer-badge:hover {
+      opacity: 0.85;
+    }
+
+    .footer-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.86rem;
+    }
+
+    .footer-menu a {
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .footer-menu a:hover {
+      color: var(--amber-light);
+      transform: translateX(4px);
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.45;
+    }
+
+    .footer-contact-list svg {
+      width: 18px;
+      height: 18px;
+      color: var(--terracotta);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .footer-contact-list a:hover {
+      color: var(--amber-light);
+    }
+
+    .footer-social-text {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-socials a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: all 0.25s ease;
+    }
+
+    .footer-socials a:hover {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .footer-socials svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 50px;
+      padding-top: 24px;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* RESPONSIVO PARA TABLETS Y MÓVILES */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .copyright {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* BOTÓN FLOTANTE WHATSAPP */
+    .wa-float {
+      position: fixed; right: 26px; bottom: 26px; z-index: 99;
+      width: 62px; height: 62px; border-radius: 50%; background: #25D366; color: var(--white);
+      display: grid; place-items: center; font-size: 1.8rem; box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: 0.25s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    /* RESPONSIVE */
+    @media(max-width: 1024px) {
+      .quote-container { grid-template-columns: 1fr; }
+      .quote-summary { border-left: 0; border-top: 1px solid var(--border); }
+      .value-grid, .intro-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-grid, .event-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-meta { grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+    @media(max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .hero { min-height: 720px; }
+      .hero h1 { font-size: 3.8rem; }
+      .quote-main { padding: 32px 24px; }
+      .quote-summary { padding: 36px 24px; }
+      .service-grid, .event-grid { grid-template-columns: 1fr; }
+      .grid-options { grid-template-columns: 1fr; }
+      .photo-grid-custom { height: auto; grid-template-columns: 1fr; }
+      .photo-grid-custom .img-small { height: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="Finca San Blas">
+        <!-- Marco circular con tu logo -->
+        <div class="brand-mark-circle">
+          <img src="resources/logo/logo_finca.jpeg" alt="Logo Finca San Blas">
+        </div>
+        <div class="brand-text">
+          <strong>Finca San Blas</strong>
+          <span>Salón & Jardín</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#concepto">Concepto</a>
+        <a href="#espacio">Instalaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a class="nav-cta" href="#cotiza">Cotizar mi Evento</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+</nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div>
+
+      <div class="container hero-content">
+        <span class="eyebrow">Toluca</span>
+        <h1>¿Planeas un evento?<span>Hazlo sencillo.</span></h1>
+        <p class="hero-copy">
+          Un espacio privado con salón, jardín, corredor de cantera, cocina equipada, barra de servicio, estacionamiento interno e iluminación ambiental cálida.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-terracotta" href="#cotiza">Cotizar mi Evento en 2 min</a>
+          <a class="btn btn-light" href="#espacio">Conoce la Finca</a>
+        </div>
+      </div>
+
+      <div class="container hero-meta">
+        <div><strong>Salón + Jardín</strong>Integración de Ambientes</div>
+        <div><strong>Corredor & Pozo</strong>Cantera Rosa Artesanal</div>
+        <div><strong>Cocina Equipada</strong>Plancha y Barra de Talavera</div>
+      </div>
+    </section>
+
+    <!-- CONCEPTO "HAZLO SENCILLO" -->
+    <section class="value-banner" id="concepto">
+      <div class="container value-grid">
+        <div class="value-quote">
+          “Un espacio auténtico con sabor a finca tradicional y todas las comodidades para disfrutar sin prisas.”
+          <span>— El concepto Finca San Blas</span>
+        </div>
+        <div class="value-cards">
+          <div class="v-card">
+            <h4>Menos Proveedores</h4>
+            <p>Salón, jardín, cocina, infraestructura y mobiliario listos en una sola contratación.</p>
+          </div>
+          <div class="v-card">
+            <h4>Detalles Artesanales</h4>
+            <p>Lavabos de talavera y acabados tradicionales cálidos.</p>
+          </div>
+          <div class="v-card">
+            <h4>Iluminación Acogedora</h4>
+            <p>Arbotantes de luz ámbar en salón y guirnaldas en el corredor exterior.</p>
+          </div>
+          <div class="v-card">
+            <h4>Flexibilidad Total</h4>
+            <p>Elige nuestros paquetes completos o complementa con tus propios proveedores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 1: CONOCE LAS INSTALACIONES (INTRODUCCIÓN + GALERÍA FOTOGRÁFICA) -->
+    <section class="intro" id="espacio">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Instalaciones Finca San Blas</span>
+          <h2>Conoce nuestras instalaciones.</h2>
+          <p>
+            Nuestra finca conserva la elegancia de la arquitectura tradicional mexicana: un corredor de columnas de cantera, maceteros de barro con geranios, pozo histórico de cantera rosa, cocina industrial y salón con iluminación cálida.
+          </p>
+        </div>
+
+        <!-- GALERÍA DE INSTALACIONES -->
+        <div class="gallery-grid">
+          <!-- FOTO 1: CORREDOR -->
+          <article class="gallery-card">
+            <img src="resources/images/corredor_2.jpg" alt="Corredor de cantera con maceteros y luces vintage">
+            <div class="gallery-overlay">
+              <span>Corredor Exterior</span>
+              <h3>Columnas & Cantera</h3>
+              <p>Columnas de piedra, maceteros de barro con geranios e iluminación vintage.</p>
+            </div>
+          </article>
+
+          <!-- FOTO 2: POZO ARTESANAL -->
+          <article class="gallery-card">
+            <img src="resources/images/pozo.jpg" alt="Pozo de cantera rosa artesanal">
+            <div class="gallery-overlay">
+              <span>Jardín & Rincón Icónico</span>
+              <h3>Pozo de Cantera Rosa</h3>
+              <p>Estructura de cantera con polea artesanal de hierro, ideal para fotografías.</p>
+            </div>
+          </article>
+
+          <!-- FOTO 3: SALÓN INTERIOR -->
+          <article class="gallery-card">
+            <img src="resources/images/interior.jpeg" alt="Salón principal con iluminación cálida">
+            <div class="gallery-overlay">
+              <span>Interiores</span>
+              <h3>Salón Principal</h3>
+              <p>Pisos de mosaicos artesanales, vigas y luz ambiental acogedora.</p>
+            </div>
+          </article>
+
+          <!-- FOTO 4: COCINA EQUIPADA -->
+          <article class="gallery-card">
+            <img src="resources/images/cocina.jpg" alt="Cocina profesional con plancha y azulejo de Talavera">
+            <div class="gallery-overlay">
+              <span>Servicios & Catering</span>
+              <h3>Cocina Profesional</h3>
+              <p>Plancha industrial de acero inoxidable, quemadores y detalles en Talavera.</p>
+            </div>
+          </article>
+
+          <!-- FOTO 5: ILUMINACIÓN -->
+          <article class="gallery-card">
+            <img src="resources/images/edison.jpg" alt="Detalle de focos cálidos tipo Edison">
+            <div class="gallery-overlay">
+              <span>Ambientación</span>
+              <h3>Luces Warm Edison</h3>
+              <p>Guirnalda de focos cálidos que iluminan el paso hacia el jardín por la tarde.</p>
+            </div>
+          </article>
+
+          <!-- FOTO 6: SANITARIOS -->
+          <article class="gallery-card">
+            <img src="resources/images/baño.jpg" alt="Baño rústico con lavabo de Talavera">
+            <div class="gallery-overlay">
+              <span>Comodidades</span>
+              <h3>Sanitarios Rústicos</h3>
+              <p>Lavabos artesanales de Talavera pintados a mano y espejos de madera.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: SERVICIOS Y EQUIPAMIENTO -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Infraestructura & Equipamiento</span>
+          <h2>Servicios disponibles para tu evento.</h2>
+          <p>
+            Un espacio versátil pensado para eventos pequeños y medianos. Combinamos la comodidad de un salón privado con la frescura del jardín para que disfrutes sin preocupaciones.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <!-- 1. SALÓN Y JARDÍN -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">01</span>
+            </div>
+            <h3>Salón Privado & Jardín</h3>
+            <p>Dos ambientes integrados para crear distintas dinámicas en eventos íntimos o celebraciones.</p>
+          </article>
+
+          <!-- 2. MOBILIARIO Y MANTELERÍA -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">02</span>
+            </div>
+            <h3>Mesas, Sillas & Mantelería</h3>
+            <p>Mobiliario completo y mantelería para facilitar el montaje y la distribución de tu celebración.</p>
+          </article>
+
+          <!-- 3. AUDIO E ILUMINACIÓN -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">03</span>
+            </div>
+            <h3>Audio e Iluminación</h3>
+            <p>Equipamiento esencial para ambientar y acompañar la música y los momentos especiales de tu evento.</p>
+          </article>
+
+          <!-- 4. COCINA Y BARRA -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">04</span>
+            </div>
+            <h3>Cocina & Barra</h3>
+            <p>Espacios funcionales y cómodos para preparar, organizar y servir los alimentos y bebidas de tus invitados.</p>
+          </article>
+
+          <!-- 5. ESTACIONAMIENTO PROPIO -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">05</span>
+            </div>
+            <h3>Estacionamiento Propio</h3>
+            <p>Espacio privado dentro del recinto con capacidad para aproximadamente 15 vehículos.</p>
+          </article>
+
+          <!-- 6. ESPACIO PARA CARPAS -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">06</span>
+            </div>
+            <h3>Espacio para Carpas</h3>
+            <p>Área de jardín adaptada para la instalación de carpas o lonas según las necesidades del clima.</p>
+          </article>
+
+          <!-- 7. INTERNET Y BAÑOS -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">07</span>
+            </div>
+            <h3>Internet & Baños</h3>
+            <p>Conectividad Wi-Fi disponible para organizadores e invitados, junto con sanitarios privados equipados.</p>
+          </article>
+
+          <!-- 8. CATERING Y ADICIONALES -->
+          <article class="service">
+            <div class="service-header">
+              <span class="service-num">08</span>
+            </div>
+            <h3>Catering & Adicionales</h3>
+            <p>Opciones de banquetes y servicios complementarios adaptables al estilo y concepto que tienes en mente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR INTERACTIVO DUAL -->
+    <section class="quote-section" id="cotiza">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Cotizador Digital Finca San Blas</span>
+          <h2>Arma la propuesta de tu evento.</h2>
+          <p>Selecciona tus preferencias paso a paso o redacta tu idea. Recibirás tu presupuesto directo en WhatsApp.</p>
+        </div>
+
+        <div class="quote-container" id="quoteContainer">
+          
+          <!-- LADO IZQUIERDO: FORMULARIO -->
+          <div class="quote-main">
+            
+            <!-- CAMBIO DE MODO -->
+            <div class="quote-mode-selector">
+              <button class="mode-btn active" id="btnModeStep" type="button" onclick="setMode('step')">Paso a Paso (Interactivo)</button>
+              <button class="mode-btn" id="btnModeText" type="button" onclick="setMode('text')">Escribir mi idea libremente</button>
+            </div>
+
+            <form id="quoteForm" onsubmit="return false;">
+
+              <!-- MODO TEXTO LIBRE -->
+              <div id="modeTextContainer" style="display: none;">
+                <div class="q-group">
+                  <label for="custNameFree">Nombre completo: *</label>
+                  <input type="text" id="custNameFree" class="input-field" placeholder="Tu nombre y apellido *" style="margin-bottom: 4px;">
+                  <span class="error-msg" id="errCustNameFree" style="margin-bottom: 12px;">Ingresa un nombre válido</span>
+
+                  <label for="custPhoneFree" style="margin-top: 12px;">Número de WhatsApp (10 dígitos): *</label>
+                  <input type="tel" id="custPhoneFree" class="input-field" placeholder="Ej. 7221234567 *" maxlength="10" oninput="validatePhoneInput(this);" style="margin-bottom: 4px;">
+                  <span class="error-msg" id="errCustPhoneFree" style="margin-bottom: 12px;">Ingresa un WhatsApp de 10 dígitos</span>
+
+                  <label for="freeText" style="margin-top: 12px;">Cuéntanos todo sobre tu evento: <span>(Número de personas, fecha, horario o dudas)</span></label>
+                  <textarea id="freeText" class="input-field" style="min-height: 180px; margin-bottom: 16px;" placeholder="Ej. Hola, quiero cotizar un bautizo para 100 personas el 31 de octubre. Me interesa saber el costo del paquete con carpa, meseros y loza de 1 tiempo..."></textarea>
+
+                  <!-- COMPONENTE AGENDAR VISITA (TEXTO LIBRE) -->
+                  <label for="visitDateFree">¿Te gustaría agendar una visita presencial a la Finca? <span>(Opcional)</span></label>
+                  <input type="date" id="visitDateFree" class="input-field">
+                  <span class="error-msg" id="errVisitDateFree">No puedes seleccionar el día de hoy o fechas pasadas</span>
+                  <span style="font-size: 0.74rem; color: var(--muted); display: block; margin-top: 4px;">Las visitas se agendan con al menos 24 horas de anticipación y están sujetas a disponibilidad.</span>
+                </div>
+              </div>
+
+              <!-- MODO PASO A PASO (INTERACTIVO) -->
+              <div id="modeStepContainer">
+
+                <!-- 1. DATOS BÁSICOS & CONTACTO -->
+                <div class="q-group">
+                  <label>1. Datos principales de contacto e información general: *</label>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                      <input type="text" id="custName" class="input-field" placeholder="Nombre completo *" oninput="updateSummary()">
+                      <span class="error-msg" id="errCustName">Ingresa un nombre válido</span>
+                    </div>
+                    <div>
+                      <input type="tel" id="custPhone" class="input-field" placeholder="WhatsApp (10 dígitos) *" maxlength="10" oninput="validatePhoneInput(this); updateSummary();">
+                      <span class="error-msg" id="errCustPhone">Ingresa un WhatsApp de 10 dígitos</span>
+                    </div>
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                      <label style="font-size: 0.78rem; font-weight: 600; margin-bottom: 4px;">Fecha del evento: *</label>
+                      <input type="date" id="eventDate" class="input-field" onchange="updateSummary()">
+                      <span class="error-msg" id="errEventDate">Selecciona la fecha del evento</span>
+                    </div>
+                    <div>
+                      <label style="font-size: 0.78rem; font-weight: 600; margin-bottom: 4px;">Tipo de evento: *</label>
+                      <select id="eventType" class="input-field" onchange="toggleOtherEventType(); updateSummary();">
+                        <option value="Bautizo / Primera Comunión">Bautizo / Primera Comunión</option>
+                        <option value="Cumpleaños / Aniversario">Cumpleaños / Aniversario</option>
+                        <option value="Boda Íntima / XV Años">Boda Íntima / XV Años</option>
+                        <option value="Reunión Ejecutiva / Empresarial">Reunión Ejecutiva / Empresarial</option>
+                        <option value="Otro">Otro tipo de celebración...</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ESPECIFICAR OTRO TIPO DE EVENTO -->
+                  <div id="otherEventTypeGroup" style="display: none; margin-top: 8px;">
+                    <input type="text" id="otherEventType" class="input-field" placeholder="Especifica qué tipo de evento deseas realizar *" oninput="updateSummary()">
+                    <span class="error-msg" id="errOtherEventType">Especifica el tipo de evento</span>
+                  </div>
+                </div>
+
+                <!-- 2. AFORO & HORARIOS EXACTOS -->
+                <div class="q-group">
+                  <label>2. Número de invitados estimado y horario de evento:</label>
+                  <div class="grid-options" style="margin-bottom: 12px;">
+                    <label class="opt-card"><input type="radio" name="guests" value="Menos de 30 personas" onchange="updateSummary()"> <div><strong>Menos de 30 personas</strong><span>Evento chico</span></div></label>
+                    <label class="opt-card"><input type="radio" name="guests" value="30 a 50 personas" onchange="updateSummary()"> <div><strong>30 a 50 personas</strong><span>Evento Íntimo</span></div></label>
+                    <label class="opt-card"><input type="radio" name="guests" value="50 a 80 personas" checked onchange="updateSummary()"> <div><strong>50 a 80 personas</strong><span>Aforo Recomendado</span></div></label>
+                    <label class="opt-card"><input type="radio" name="guests" value="Más de 80 personas" onchange="updateSummary()"> <div><strong>Más de 80 personas</strong><span>Gran Celebración</span></div></label>
+                    <label class="opt-card"><input type="radio" name="guests" value="Aún por definir" onchange="updateSummary()"> <div><strong>Aún por definir</strong><span>Recomiéndenme</span></div></label>
+                  </div>
+
+                  <label style="font-size: 0.8rem; font-weight: 600; margin-top: 8px; margin-bottom: 6px; display: block;">Horario planeado (Hora inicio y fin): *</label>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                      <span style="font-size: 0.72rem; color: var(--muted);">Hora de inicio:</span>
+                      <input type="time" id="startTime" class="input-field" value="14:00" onchange="updateSummary()">
+                    </div>
+                    <div>
+                      <span style="font-size: 0.72rem; color: var(--muted);">Hora de término:</span>
+                      <input type="time" id="endTime" class="input-field" value="20:00" onchange="updateSummary()">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. PRESUPUESTO PROYECTADO CON MONTO MANUAL -->
+                <div class="q-group">
+                  <label>3. Presupuesto estimado para la propuesta:</label>
+                  <div class="grid-options" style="margin-bottom: 10px;">
+                    <label class="opt-card"><input type="radio" name="budget" value="Menos de $15,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Esencial</strong><span>< $15,000 MXN</span></div></label>
+                    <label class="opt-card"><input type="radio" name="budget" value="$15,000 a $25,000 MXN" checked onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Recomendado</strong><span>$15k - $25k MXN</span></div></label>
+                    <label class="opt-card"><input type="radio" name="budget" value="$25,000 a $40,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Prémium</strong><span>$25k - $40k MXN</span></div></label>
+                    <label class="opt-card"><input type="radio" name="budget" value="Custom" id="budgetCustomRadio" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Ingresar monto</strong><span>Especificar cantidad</span></div></label>
+                  </div>
+
+                  <!-- INGRESO MANUAL DE PRESUPUESTO -->
+                  <div id="customBudgetGroup" style="display: none; margin-top: 8px;">
+                    <div style="position: relative;">
+                      <span style="position: absolute; left: 14px; top: 14px; font-weight: 700; color: var(--muted);">$</span>
+                      <input type="number" id="customBudgetAmount" class="input-field" style="padding-left: 28px;" placeholder="Ingresa tu presupuesto estimado (ej. 18000)" min="1" oninput="updateSummary()">
+                    </div>
+                    <span class="error-msg" id="errCustomBudget">Ingresa una cantidad válida</span>
+                  </div>
+                </div>
+
+                <!-- 4. PALETA DE COLORES Y TEMÁTICA -->
+                <div class="q-group">
+                  <label for="colorPalette">4. Paleta de colores o temática visual: <span>(Opcional)</span></label>
+                  <input type="text" id="colorPalette" class="input-field" placeholder="Ej. Blanco lino, tonos eucalipto, dorado, rústico terracota..." oninput="updateSummary()">
+                </div>
+
+                <!-- 5. COBERTURA Y CARPA EN JARDÍN -->
+                <div class="q-group">
+                  <label>5. Cobertura para el jardín (Carpa):</label>
+                  <div class="grid-options">
+                    <label class="opt-card"><input type="radio" name="tent" value="Carpa estructurada completa" checked onchange="updateSummary()"> <div><strong>Carpa Completa</strong><span>Protección viento/lluvia</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Toldo ligero para sol" onchange="updateSummary()"> <div><strong>Toldo Ligero</strong><span>Solo para sol</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Uso exclusivo salón techado" onchange="updateSummary()"> <div><strong>Sin Carpa</strong><span>Uso de salón</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Aconsejar en la visita" onchange="updateSummary()"> <div><strong>Por definir</strong><span>Evaluar en visita</span></div></label>
+                  </div>
+                </div>
+
+                <!-- 6. ESTILO DE MOBILIARIO -->
+                <div class="q-group">
+                  <label>6. Estilo de Mobiliario deseado:</label>
+                  <div class="grid-options">
+                    <label class="opt-card"><input type="radio" name="furniture" value="Rústico Elegante (Crossback/Madera)" checked onchange="updateSummary()"> <div><strong>Rústico Elegante</strong><span>Silla Crossback / Madera</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Clásico (Silla Tiffany)" onchange="updateSummary()"> <div><strong>Clásico Elegante</strong><span>Silla Tiffany</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Práctico Acojinado" onchange="updateSummary()"> <div><strong>Práctico</strong><span>Acojinado versátil</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Ver catálogo en Finca" onchange="updateSummary()"> <div><strong>Ver Catálogo</strong><span>En cita presencial</span></div></label>
+                  </div>
+                </div>
+
+                <!-- 7. ÁREAS Y MESAS ESPECIALES -->
+                <div class="q-group">
+                  <label>7. Áreas y mesas especiales a considerar: <span>(Selecciona las que requieras)</span></label>
+                  <div class="grid-options">
+                    <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa Principal / Padrinos" onchange="updateSummary()"> <div><strong>Mesa Principal</strong><span>Padrinos / Homenajeados</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa de Pastel" onchange="updateSummary()"> <div><strong>Mesa de Pastel</strong><span>Espacio destacado</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa de Dulces / Postres" onchange="updateSummary()"> <div><strong>Mesa de Dulces</strong><span>Postres o botanas</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="area-check" value="Mesa de Regalos / Recepción" onchange="updateSummary()"> <div><strong>Mesa de Regalos</strong><span>Recepción de invitados</span></div></label>
+                  </div>
+                </div>
+
+                <!-- 8. BANQUETE & MESEROS -->
+                <div class="q-group">
+                  <label>8. Alimentos y Servicio de Meseros:</label>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <select id="foodFormat" class="input-field" onchange="updateSummary()">
+                      <option value="Plato servido a la mesa (1 a 3 tiempos)">Plato servido a la mesa</option>
+                      <option value="Buffet / Taquiza / Cazuelas">Buffet / Taquiza / Cazuelas</option>
+                      <option value="Uso de cocina industrial para mi catering">Catering propio (uso cocina)</option>
+                      <option value="Aún no lo decido">Aún por definir</option>
+                    </select>
+                    <select id="serverOption" class="input-field" onchange="updateSummary()">
+                      <option value="Incluir equipo completo de meseros (1/20 p)" selected>Incluir equipo de meseros</option>
+                      <option value="Solo apoyo básico de barra">Solo apoyo básico de barra</option>
+                      <option value="Yo contrataré meseros">Tengo mis meseros</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 9. ESPECIFICACIÓN DE AUDIO Y MÚSICA -->
+                <div class="q-group">
+                  <label>9. Detalles de Audio y Música para el evento:</label>
+                  <select id="audioOption" class="input-field" onchange="updateSummary()">
+                    <option value="Llevaré DJ Profesional (requiere instalación completa)">Llevaré mi propio DJ profesional</option>
+                    <option value="Llevaré Grupo Musical / Banda en vivo (solo requiere conexión eléctrica)">Traeré Grupo Musical en vivo (solo requiere conexión)</option>
+                    <option value="Requiero Cabina de Audio ambiental de la Finca">Deseo contratar audio/música ambiental de la Finca</option>
+                    <option value="Sin música especial / Por definir">Por definir / Sin requisitos especiales</option>
+                  </select>
+                </div>
+
+                <!-- 10. COMPLEMENTOS Y SEGURIDAD -->
+                <div class="q-group">
+                  <label>10. Complementos y Servicios de Logística: <span>(Opcionales)</span></label>
+                  <div class="grid-options">
+                    <label class="opt-card"><input type="checkbox" class="extra-check" value="Calefactores de jardín" onchange="updateSummary()"> <div><strong>Calefactores</strong><span>Ideales para la tarde</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="extra-check" value="Personal de Seguridad y acceso" onchange="updateSummary()"> <div><strong>Personal de Seguridad</strong><span>Control de acceso</span></div></label>
+                    <label class="opt-card"><input type="checkbox" class="extra-check" value="Control de Estacionamiento (Valet/Logística)" onchange="updateSummary()"> <div><strong>Control Estacionamiento</strong><span>Logística de autos</span></div></label>
+                  </div>
+                </div>
+
+                <!-- 11. AGENDAR VISITA A LA FINCA -->
+                <div class="q-group">
+                  <label for="visitDate">11. ¿Te gustaría agendar una visita presencial a la Finca? <span>(Opcional)</span></label>
+                  <input type="date" id="visitDate" class="input-field" onchange="updateSummary()">
+                  <span class="error-msg" id="errVisitDate">No puedes seleccionar el día de hoy o fechas pasadas</span>
+                  <span style="font-size: 0.74rem; color: var(--muted); display: block; margin-top: 4px;">Las visitas se agendan con al menos 24 horas de anticipación y estan sujetas a disponibilidad.</span>
+                </div>
+
+                <!-- 12. NOTAS ADICIONALES Y CIERRE -->
+                <div class="q-group">
+                  <label for="extraNotes">12. Notas adicionales o detalles especiales: <span>(Opcional)</span></label>
+                  <textarea id="extraNotes" class="input-field" style="min-height: 90px;" placeholder="¿Hay alguna duda, requerimiento especial o detalle que debamos considerar para tu cotización?"></textarea>
+                </div>
+
+              </div>
+
+              <div style="margin-top: 32px;">
+                <button type="button" class="btn btn-terracotta" style="width: 100%; font-size: 1rem;" onclick="submitToWhatsApp()">
+                  Enviar Cotización a WhatsApp
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- LADO DERECHO: RESUMEN EN TIEMPO REAL -->
+          <div class="quote-summary" id="quoteSummary">
+            <div>
+              <div class="summary-head">
+                <h3>Tu Resumen</h3>
+                <p>Vista previa de los detalles que enviarás a nuestro equipo.</p>
+              </div>
+
+              <ul class="summary-list">
+                <li><span>Fecha Evento:</span> <span id="sumDate">Por definir</span></li>
+                <li><span>Tipo Evento:</span> <span id="sumType">Bautizo / Primera Com.</span></li>
+                <li><span>Invitados:</span> <span id="sumGuests">100 personas</span></li>
+                <li><span>Horario:</span> <span id="sumSchedule">14:00 - 20:00 hrs</span></li>
+                <li><span>Presupuesto:</span> <span id="sumBudget">$15k - $25k MXN</span></li>
+                <li><span>Carpa:</span> <span id="sumTent">Carpa completa</span></li>
+                <li><span>Mobiliario:</span> <span id="sumFurniture">Rústico Elegante</span></li>
+                <li><span>Mesas Esp.:</span> <span id="sumSpecialAreas">Ninguna</span></li>
+                <li><span>Audio/Música:</span> <span id="sumAudio">Por definir</span></li>
+                <li><span>Complementos:</span> <span id="sumExtras">Ninguno</span></li>
+                <li><span>Cita Visita:</span> <span id="sumVisitDate">Sin agendar</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="summary-note">
+                Te responderemos a la brevedad para enviar tu presupuesto y coordinar tu cita en Finca San Blas.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN -->
+    <section class="contact" id="contacto">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Agenda tu Visita</span>
+          <h2>Ven a conocer Finca San Blas <em>en persona.</em></h2>
+          <p style="color: var(--muted); margin-top: 14px;">
+            Agendamos citas personalizadas para ayudarte a visualizar tu evento.
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="icon">📍</div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Calz. de los Caporales 207, Rancho San Miguel Zacango, Cacalomacán, Toluca, Estado de México.</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">💬</div>
+              <div>
+                <strong>WhatsApp Directo</strong>
+                <span>722 840 6785</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">🌿</div>
+              <div>
+                <strong>Visitas Guiadas</strong>
+                <span>Atención previa cita agendada.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.8749264480575!2d-99.69658342477933!3d19.236004782001796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd897df4e3cb4b%3A0xca1afac4d7bda372!2sSal%C3%B3n%20San%20Blas!5e1!3m2!1ses-419!2smx!4v1791580476051!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- COLUMNA 1: MARCA, DESCRIPCIÓN Y MEDALLA -->
+        <div class="footer-col footer-brand">
+          <a class="brand" href="#inicio" aria-label="Finca San Blas">
+            <div class="brand-mark-circle">
+              <img src="resources/logo/logo_finca.jpeg" alt="Logo Finca San Blas">
+            </div>
+            <div class="brand-text">
+              <strong>Finca San Blas</strong>
+              <span>Salón & Jardín · Toluca</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Un espacio privado, acogedor y versátil en Cacalomacán para hacer de cada celebración una experiencia inolvidable.
+          </p>
+          <a href="https://lugaresparaeventos.mx/lugar/estado-de-mexico/toluca/salon-finca-san-blas" target="_blank" rel="noopener" class="footer-badge" title="Ver nuestro perfil verificado en Lugares Para Eventos MX">
+            <img src="https://lugaresparaeventos.mx/badges/negocio-verificado.png" alt="Negocio Verificado — Lugares Para Eventos MX" width="120" height="36" loading="lazy">
+          </a>
+        </div>
+
+        <!-- COLUMNA 2: NAVEGACIÓN RÁPIDA -->
+        <div class="footer-col">
+          <h4 class="footer-title">Navegación</h4>
+          <ul class="footer-menu">
+            <li><a href="#concepto">Concepto</a></li>
+            <li><a href="#espacio">Instalaciones</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#cotiza">Cotizar Evento</a></li>
+            <li><a href="#contacto">Contacto & Ubicación</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMNA 3: CONTACTO DIRECTO -->
+        <div class="footer-col">
+          <h4 class="footer-title">Contacto</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Calz. de los Caporales 207, Cacalomacán, Toluca, Edo. Méx.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="https://wa.me/5217228406785" target="_blank" rel="noopener">722 840 6785</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Atención previa cita agendada</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMNA 4: REDES SOCIALES -->
+        <div class="footer-col">
+          <h4 class="footer-title">Síguenos</h4>
+          <p class="footer-social-text">Encuentra fotos de montajes e inspiración para tu evento:</p>
+          <div class="footer-socials">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/5217228406785" target="_blank" rel="noopener" aria-label="WhatsApp Finca San Blas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/finca_san_blas/" target="_blank" rel="noopener" aria-label="Instagram Finca San Blas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61594294288989" target="_blank" rel="noopener" aria-label="Facebook Finca San Blas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BARRA INFERIOR DE COPYRIGHT -->
+      <div class="copyright">
+        <span>© 2026 Finca San Blas. Todos los derechos reservados.</span>
+        <span>Cacalomacán · Toluca, Estado de México</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/5217228406785?text=Hola%20Finca%20San%20Blas%2C%20me%20gustar%C3%ADa%20agendar%20una%20visita%20para%20conocer%20las%20instalaciones." target="_blank" aria-label="Contactar por WhatsApp">
+    💬
+  </a>
+
+  <!-- LÓGICA DE JAVASCRIPT -->
+  <script>
+    let currentMode = 'step';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initDatePickers();
+      updateSummary();
+    });
+
+    function initDatePickers() {
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tomorrowStr = tomorrow.toISOString().split('T')[0];
+      
+      // Configurar mínimo para ambas entradas de visitas (Paso a Paso y Texto Libre)
+      ['visitDate', 'visitDateFree'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) input.setAttribute('min', tomorrowStr);
+      });
+
+      const todayStr = today.toISOString().split('T')[0];
+      const eventDateInput = document.getElementById('eventDate');
+      if (eventDateInput) {
+        eventDateInput.setAttribute('min', todayStr);
+      }
+    }
+
+    function validatePhoneInput(input) {
+      input.value = input.value.replace(/[^0-9]/g, '');
+    }
+
+    // Alternar modos y ocultar/mostrar panel de resumen
+    function setMode(mode) {
+      currentMode = mode;
+      const container = document.getElementById('quoteContainer');
+      const summary = document.getElementById('quoteSummary');
+      const btnStep = document.getElementById('btnModeStep');
+      const btnText = document.getElementById('btnModeText');
+      const stepBox = document.getElementById('modeStepContainer');
+      const textBox = document.getElementById('modeTextContainer');
+
+      btnStep.classList.toggle('active', mode === 'step');
+      btnText.classList.toggle('active', mode === 'text');
+
+      if (mode === 'text') {
+        stepBox.style.display = 'none';
+        textBox.style.display = 'block';
+        container.classList.add('mode-text-active');
+        if (summary) summary.style.display = 'none';
+      } else {
+        textBox.style.display = 'none';
+        stepBox.style.display = 'block';
+        container.classList.remove('mode-text-active');
+        if (summary) summary.style.display = 'flex';
+      }
+    }
+
+    function toggleOtherEventType() {
+      const typeSelect = document.getElementById('eventType');
+      const otherGroup = document.getElementById('otherEventTypeGroup');
+      if (typeSelect.value === 'Otro') {
+        otherGroup.style.display = 'block';
+      } else {
+        otherGroup.style.display = 'none';
+        document.getElementById('otherEventType').classList.remove('invalid');
+        document.getElementById('errOtherEventType').classList.remove('visible');
+      }
+    }
+
+    function toggleCustomBudget() {
+      const customRadio = document.getElementById('budgetCustomRadio');
+      const customGroup = document.getElementById('customBudgetGroup');
+      if (customRadio.checked) {
+        customGroup.style.display = 'block';
+      } else {
+        customGroup.style.display = 'none';
+        document.getElementById('customBudgetAmount').classList.remove('invalid');
+        document.getElementById('errCustomBudget').classList.remove('visible');
+      }
+    }
+
+    function updateSummary() {
+      if (currentMode !== 'step') return;
+
+      const date = document.getElementById('eventDate').value || 'Por definir';
+      
+      const eventTypeSelect = document.getElementById('eventType').value;
+      let eventTypeDisplay = eventTypeSelect;
+      if (eventTypeSelect === 'Otro') {
+        const otherVal = document.getElementById('otherEventType').value.trim();
+        eventTypeDisplay = otherVal ? `Otro (${otherVal})` : 'Otro (Sin especificar)';
+      }
+
+      const guestRadio = document.querySelector('input[name="guests"]:checked');
+      const guests = guestRadio ? guestRadio.value : '100 personas';
+
+      const start = document.getElementById('startTime').value || '14:00';
+      const end = document.getElementById('endTime').value || '20:00';
+      const scheduleStr = `${start} a ${end} hrs`;
+
+      const budgetRadio = document.querySelector('input[name="budget"]:checked');
+      let budgetDisplay = budgetRadio ? budgetRadio.value : 'Sin especificar';
+      if (budgetRadio && budgetRadio.value === 'Custom') {
+        const customAmt = document.getElementById('customBudgetAmount').value;
+        budgetDisplay = customAmt ? `$${Number(customAmt).toLocaleString('es-MX')} MXN` : 'Custom (Sin especificar)';
+      }
+
+      const tentRadio = document.querySelector('input[name="tent"]:checked');
+      const tent = tentRadio ? tentRadio.value : 'Carpa completa';
+
+      const furnRadio = document.querySelector('input[name="furniture"]:checked');
+      const furniture = furnRadio ? furnRadio.value : 'Rústico Elegante';
+
+      const areaCheckboxes = document.querySelectorAll('.area-check:checked');
+      const areasList = Array.from(areaCheckboxes).map(cb => cb.value);
+
+      const audioVal = document.getElementById('audioOption').value;
+
+      const extraCheckboxes = document.querySelectorAll('.extra-check:checked');
+      const extrasList = Array.from(extraCheckboxes).map(cb => cb.value);
+
+      const visitDateVal = document.getElementById('visitDate').value || 'Sin agendar';
+
+      document.getElementById('sumDate').textContent = date;
+      document.getElementById('sumType').textContent = eventTypeDisplay;
+      document.getElementById('sumGuests').textContent = guests;
+      document.getElementById('sumSchedule').textContent = scheduleStr;
+      document.getElementById('sumBudget').textContent = budgetDisplay;
+      document.getElementById('sumTent').textContent = tent;
+      document.getElementById('sumFurniture').textContent = furniture;
+      document.getElementById('sumSpecialAreas').textContent = areasList.length > 0 ? areasList.join(', ') : 'Ninguna';
+      document.getElementById('sumAudio').textContent = audioVal.split('(')[0];
+      document.getElementById('sumExtras').textContent = extrasList.length > 0 ? extrasList.join(', ') : 'Ninguno';
+      document.getElementById('sumVisitDate').textContent = visitDateVal;
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      document.querySelectorAll('.input-field').forEach(el => el.classList.remove('invalid'));
+      document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('visible'));
+
+      if (currentMode === 'text') {
+        const nameFree = document.getElementById('custNameFree');
+        const phoneFree = document.getElementById('custPhoneFree');
+        const visitDateFree = document.getElementById('visitDateFree');
+
+        if (!nameFree.value.trim() || nameFree.value.trim().length < 3) {
+          nameFree.classList.add('invalid');
+          document.getElementById('errCustNameFree').classList.add('visible');
+          isValid = false;
+        }
+        if (!phoneFree.value || phoneFree.value.length !== 10) {
+          phoneFree.classList.add('invalid');
+          document.getElementById('errCustPhoneFree').classList.add('visible');
+          isValid = false;
+        }
+        if (visitDateFree.value) {
+          const selectedVisit = new Date(visitDateFree.value + 'T00:00:00');
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+
+          if (selectedVisit <= today) {
+            visitDateFree.classList.add('invalid');
+            document.getElementById('errVisitDateFree').classList.add('visible');
+            isValid = false;
+          }
+        }
+        return isValid;
+      }
+
+      // Validación Paso a Paso
+      const name = document.getElementById('custName');
+      const phone = document.getElementById('custPhone');
+      const date = document.getElementById('eventDate');
+      const eventType = document.getElementById('eventType');
+      const otherEventType = document.getElementById('otherEventType');
+      const customBudgetRadio = document.getElementById('budgetCustomRadio');
+      const customBudgetAmt = document.getElementById('customBudgetAmount');
+      const visitDate = document.getElementById('visitDate');
+
+      if (!name.value.trim() || name.value.trim().length < 3) {
+        name.classList.add('invalid');
+        document.getElementById('errCustName').classList.add('visible');
+        isValid = false;
+      }
+
+      if (!phone.value || phone.value.length !== 10) {
+        phone.classList.add('invalid');
+        document.getElementById('errCustPhone').classList.add('visible');
+        isValid = false;
+      }
+
+      if (!date.value) {
+        date.classList.add('invalid');
+        document.getElementById('errEventDate').classList.add('visible');
+        isValid = false;
+      }
+
+      if (eventType.value === 'Otro' && (!otherEventType.value.trim() || otherEventType.value.trim().length < 2)) {
+        otherEventType.classList.add('invalid');
+        document.getElementById('errOtherEventType').classList.add('visible');
+        isValid = false;
+      }
+
+      if (customBudgetRadio.checked && (!customBudgetAmt.value || Number(customBudgetAmt.value) <= 0)) {
+        customBudgetAmt.classList.add('invalid');
+        document.getElementById('errCustomBudget').classList.add('visible');
+        isValid = false;
+      }
+
+      if (visitDate.value) {
+        const selectedVisit = new Date(visitDate.value + 'T00:00:00');
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedVisit <= today) {
+          visitDate.classList.add('invalid');
+          document.getElementById('errVisitDate').classList.add('visible');
+          isValid = false;
+        }
+      }
+
+      return isValid;
+    }
+
+    function submitToWhatsApp() {
+      if (!validateForm()) {
+        alert('Por favor corrige los campos marcados en rojo antes de enviar tu solicitud.');
+        return;
+      }
+
+      let message = '';
+
+      if (currentMode === 'text') {
+        const name = document.getElementById('custNameFree').value.trim();
+        const phone = document.getElementById('custPhoneFree').value.trim();
+        const textVal = document.getElementById('freeText').value.trim() || 'Deseo información general para un evento.';
+        const visitDateVal = document.getElementById('visitDateFree').value || 'Sin agendar por el momento';
+
+        message = `*SOLICITUD LIBRE DE EVENTO - FINCA SAN BLAS* 🌿\n\n` +
+                  `👤 *Nombre:* ${name}\n` +
+                  `📱 *WhatsApp:* ${phone}\n\n` +
+                  `📝 *Detalles de mi evento:*\n${textVal}\n\n` +
+                  `🗓 *Cita sugerida para Visita:* ${visitDateVal}`;
+      } else {
+        const name = document.getElementById('custName').value.trim();
+        const phone = document.getElementById('custPhone').value.trim();
+        const date = document.getElementById('eventDate').value;
+        
+        const eventTypeSelect = document.getElementById('eventType').value;
+        const eventType = eventTypeSelect === 'Otro' ? `Otro (${document.getElementById('otherEventType').value.trim()})` : eventTypeSelect;
+
+        const guestRadio = document.querySelector('input[name="guests"]:checked');
+        const guests = guestRadio ? guestRadio.value : '100 personas';
+
+        const start = document.getElementById('startTime').value || '14:00';
+        const end = document.getElementById('endTime').value || '20:00';
+        
+        const budgetRadio = document.querySelector('input[name="budget"]:checked');
+        let budget = budgetRadio ? budgetRadio.value : 'Sin especificar';
+        if (budgetRadio && budgetRadio.value === 'Custom') {
+          budget = `$${Number(document.getElementById('customBudgetAmount').value).toLocaleString('es-MX')} MXN`;
+        }
+
+        const colorPalette = document.getElementById('colorPalette').value.trim() || 'No especificada';
+        const tent = document.querySelector('input[name="tent"]:checked').value;
+        const furniture = document.querySelector('input[name="furniture"]:checked').value;
+
+        const areaCheckboxes = document.querySelectorAll('.area-check:checked');
+        const areasList = Array.from(areaCheckboxes).map(cb => `  • ${cb.value}`).join('\n');
+
+        const food = document.getElementById('foodFormat').value;
+        const servers = document.getElementById('serverOption').value;
+        const audio = document.getElementById('audioOption').value;
+
+        const extraCheckboxes = document.querySelectorAll('.extra-check:checked');
+        const extrasList = Array.from(extraCheckboxes).map(cb => `  • ${cb.value}`).join('\n');
+
+        const visitDate = document.getElementById('visitDate').value || 'Sin agendar por el momento';
+        const extraNotes = document.getElementById('extraNotes').value.trim() || 'Sin notas adicionales';
+
+        message = `*COTIZACIÓN INTERACTIVA - FINCA SAN BLAS* 🌿\n\n` +
+                  `👤 *Nombre:* ${name}\n` +
+                  `📱 *WhatsApp:* ${phone}\n\n` +
+                  `📅 *Fecha de Evento:* ${date}\n` +
+                  `🎉 *Tipo de Evento:* ${eventType}\n` +
+                  `👥 *Invitados:* ${guests}\n` +
+                  `⏰ *Horario exacto:* ${start} a ${end} hrs\n` +
+                  `💰 *Presupuesto Estimado:* ${budget}\n` +
+                  `🎨 *Paleta de Colores/Temática:* ${colorPalette}\n\n` +
+                  `⛺ *Carpa / Clima:* ${tent}\n` +
+                  `🪑 *Mobiliario:* ${furniture}\n` +
+                  `🍽 *Alimentos:* ${food}\n` +
+                  `🕴 *Meseros:* ${servers}\n` +
+                  `🔊 *Audio/Música:* ${audio}\n\n` +
+                  `📌 *Áreas / Mesas Especiales:*\n${areasList || '  • Ninguna extra'}\n\n` +
+                  `✨ *Complementos y Logística:*\n${extrasList || '  • Ninguno'}\n\n` +
+                  `🗓 *Cita sugerida para Visita:* ${visitDate}\n` +
+                  `💬 *Notas adicionales:* ${extraNotes}\n\n` +
+                  `Me gustaría recibir su propuesta formal y agendar la cita.`;
+      }
+
+      const encodedText = encodeURIComponent(message);
+      const waUrl = `https://wa.me/5217228406785?text=${encodedText}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
+
+</body>
+</html>

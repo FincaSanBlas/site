@@ -2,14 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="Finca San Blas — Salón & Jardín privado para eventos en Cacalomacán, Toluca. Un entorno rústico elegante con cocina equipada, salón, jardín y estacionamiento.">
   <meta name="theme-color" content="#1a382e">
   <title>Finca San Blas | Salón, Jardín & Eventos Privados en Toluca</title>
 
-
   <link rel="icon" href="resources/logo/logo_finca.jpeg">
-
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +43,6 @@
       --sans: "DM Sans", system-ui, -apple-system, sans-serif;
     }
 
-    
-
     /* RESETS */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -71,12 +67,12 @@
     }
     .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--terracotta); }
     
-    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.03; }
-    h2 { font-size: clamp(2.5rem, 4.8vw, 4.5rem); color: var(--green-dark); }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.05; }
+    h2 { font-size: clamp(2.2rem, 4.8vw, 4.5rem); color: var(--green-dark); }
     h2 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
     
     .section-head { max-width: 740px; margin-bottom: 50px; }
-    .section-head p { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
 
     .brand-logo-full {
       height: 52px;
@@ -85,22 +81,18 @@
       object-fit: contain;
       display: block;
     }
+
     /* NAVEGACIÓN */
     .nav {
       position: absolute; top: 0; left: 0; width: 100%; z-index: 100;
-      padding: 24px 0; color: var(--white);
+      padding: 20px 0; color: var(--white);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .brand-mark {
-      width: 48px; height: 48px; border: 1.5px solid var(--amber-light);
-      border-radius: 50%; display: grid; place-items: center;
-      font-family: var(--serif); font-size: 1.6rem; color: var(--amber-light);
-      background: rgba(18, 40, 33, 0.55); backdrop-filter: blur(10px);
-    }
-    .brand-text strong { display: block; font-family: var(--serif); font-size: 1.45rem; line-height: 0.95; letter-spacing: 0.02em; color: var(--white); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    
+    .brand-text strong { display: block; font-family: var(--serif); font-size: 1.4rem; line-height: 0.95; letter-spacing: 0.02em; color: var(--white); }
     .brand-text span { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.9; color: var(--amber-light); }
-    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 0.88rem; font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.88rem; font-weight: 500; }
     .nav-links a { opacity: 0.9; transition: 0.2s; }
     .nav-links a:hover { opacity: 1; color: var(--amber-light); }
     .nav-cta {
@@ -110,28 +102,31 @@
       transition: 0.3s;
     }
     .nav-cta:hover { background: var(--terracotta); color: var(--white); border-color: var(--terracotta); }
-    .menu-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.8rem; cursor: pointer; }
-
+    .menu-toggle {
+      display: none; background: rgba(18, 40, 33, 0.6); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px;
+      border-radius: 12px; backdrop-filter: blur(8px);
+    }
 
     /* MARCO CIRCULAR PARA EL LOGO */
     .brand-mark-circle {
-      width: 54px;
-      height: 54px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       overflow: hidden;
-      border: 2px solid var(--amber-light, #f5cf8e); /* Borde dorado/ámbar elegante */
+      border: 2px solid var(--amber-light, #f5cf8e);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #be4826; /* Color terracota que empareja con el fondo de tu logo */
+      background-color: #be4826;
     }
 
     .brand-mark-circle img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Recorta la imagen limpiamente en el círculo */
+      object-fit: cover;
       display: block;
     }
 
@@ -144,15 +139,15 @@
         url("resources/images/IMG 1 - 00000001 (copy 1).png") center/cover no-repeat;
     }
     .hero-content { position: relative; z-index: 2; padding: 180px 0 80px; max-width: 840px; }
-    .hero h1 { font-size: clamp(3.8rem, 8vw, 7.5rem); margin: 20px 0 24px; letter-spacing: -0.03em; font-weight: 500; }
+    .hero h1 { font-size: clamp(3.2rem, 7vw, 7.5rem); margin: 20px 0 24px; letter-spacing: -0.03em; font-weight: 500; }
     .hero h1 span { display: block; color: var(--amber-light); font-style: italic; font-weight: 400; }
-    .hero-copy { font-size: 1.2rem; max-width: 640px; color: rgba(255, 255, 255, 0.92); font-weight: 400; }
+    .hero-copy { font-size: 1.18rem; max-width: 640px; color: rgba(255, 255, 255, 0.92); font-weight: 400; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
 
     /* BOTONES GENERALES */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      min-height: 56px; padding: 0 28px; border-radius: 999px;
+      min-height: 54px; padding: 0 28px; border-radius: 999px;
       font-weight: 700; font-size: 0.88rem; transition: 0.25s ease; border: 1px solid transparent;
       cursor: pointer; text-align: center;
     }
@@ -163,12 +158,32 @@
     .btn-light { border-color: rgba(255, 255, 255, 0.4); color: var(--white); background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
     .btn-light:hover { background: rgba(255, 255, 255, 0.2); }
 
+    /* CENTRAR ELEMENTOS Y TEXTO DE HERO-META */
     .hero-meta {
-      position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.18);
-      padding: 26px 0 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
-      color: rgba(255, 255, 255, 0.88); font-size: 0.82rem;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 26px 0 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.82rem;
     }
-    .hero-meta strong { display: block; color: var(--amber-light); font-size: 1.15rem; font-family: var(--serif); margin-bottom: 2px; }
+
+    .hero-meta div { text-align: center; }
+
+    .hero-meta strong {
+      display: block;
+      color: var(--amber-light);
+      font-size: 1.15rem;
+      font-family: var(--serif);
+      margin-bottom: 2px;
+      text-align: center;
+    }
 
     /* BANNER "HAZLO SENCILLO" */
     .value-banner {
@@ -189,35 +204,9 @@
     .v-card h4 { color: var(--amber-light); font-size: 1.3rem; margin-bottom: 6px; }
     .v-card p { font-size: 0.82rem; color: rgba(255,255,255,0.78); }
 
-    /* INTRODUCCIÓN Y ESPACIO REAL */
-    .intro { padding: 120px 0 100px; background: var(--cream-light); }
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .intro-text { font-size: 1.1rem; color: var(--muted); margin: 20px 0 32px; }
-    .feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .feature { padding: 20px 16px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); }
-    .feature b { display: block; color: var(--terracotta); font-size: 0.98rem; font-family: var(--serif); }
-    .feature span { font-size: 0.78rem; color: var(--muted); }
-    
-    .photo-grid-custom {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; height: 580px;
-    }
-    .photo-grid-custom .img-large {
-      grid-column: 1 / -1; height: 320px; border-radius: var(--radius-md); overflow: hidden;
-      box-shadow: var(--shadow-sm); position: relative;
-    }
-    .photo-grid-custom .img-small {
-      height: 246px; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm);
-    }
-    .photo-badge {
-      position: absolute; left: 20px; bottom: 20px; background: rgba(255, 253, 249, 0.94);
-      padding: 16px 20px; border-radius: var(--radius-sm); max-width: 280px; backdrop-filter: blur(10px);
-      border: 1px solid var(--border);
-    }
-    .photo-badge strong { font-family: var(--serif); font-size: 1.4rem; color: var(--terracotta); display: block; line-height: 1; }
-    .photo-badge span { font-size: 0.76rem; color: var(--muted); margin-top: 4px; display: block; }
+    /* INTRODUCCIÓN Y GALERÍA */
+    .intro { padding: 110px 0 90px; background: var(--cream-light); }
 
-    /* GALERÍA DE INSTALACIONES REALES */
-    /* ESTILOS PARA LA GALERÍA DE INSTALACIONES */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -278,44 +267,31 @@
       line-height: 1.3;
     }
 
-    /* RESPONSIVO PARA MÓVILES Y TABLETS */
-    @media (max-width: 900px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .gallery-card {
-        height: 290px;
-      }
-    }
-
     /* SERVICIOS Y DETALLES DE INSTALACIONES */
-    .services { padding: 120px 0; background: var(--white); }
+    .services { padding: 110px 0; background: var(--white); }
     .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
     .service {
       border: 1px solid var(--border); border-radius: var(--radius-md); padding: 32px 26px;
-      transition: 0.3s; background: var(--cream-light); display: flex; flex-direction: column; justify-content: space-between;
+      transition: 0.3s; background: var(--cream-light); display: flex; flex-direction: column; justify-content: flex-start;
+      border-top: 3px solid var(--terracotta);
     }
     .service:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--amber-glow); }
-    .service-icon {
-      width: 48px; height: 48px; border-radius: 14px; background: var(--green-soft);
-      display: grid; place-items: center; color: var(--terracotta); font-size: 1.3rem; margin-bottom: 22px;
+    
+    .service-header { margin-bottom: 12px; }
+    .service-num {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--terracotta);
     }
-    .service h3 { font-size: 1.55rem; color: var(--green-dark); margin-bottom: 8px; }
+
+    .service h3 { font-size: 1.45rem; color: var(--green-dark); margin-bottom: 8px; }
     .service p { font-size: 0.84rem; color: var(--muted); }
 
     /* COTIZADOR INTERACTIVO DUAL */
-    .quote-section { padding: 120px 0; background: var(--cream); position: relative; }
+    .quote-section { padding: 110px 0; background: var(--cream); position: relative; }
     .quote-container {
       background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);
       box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr 380px;
     }
-    .quote-main { padding: 50px 48px; }
+    .quote-main { padding: 46px 42px; }
 
     /* MODOS DE COTIZACIÓN */
     .quote-mode-selector {
@@ -335,22 +311,36 @@
     }
     .q-group label span { color: var(--muted); font-weight: 400; font-size: 0.8rem; margin-left: 6px; }
 
-    .grid-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    /* CLASE REUTILIZABLE PARA FILAS DE 2 COLUMNAS EN FORMULARIO */
+    .q-row-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .grid-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
     .opt-card {
-      border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px;
       cursor: pointer; transition: 0.2s; background: var(--cream-light); display: flex; align-items: center; gap: 12px;
+      min-height: 52px;
     }
     .opt-card:hover { border-color: var(--terracotta); background: var(--white); }
     .opt-card input[type="radio"], .opt-card input[type="checkbox"] {
-      accent-color: var(--terracotta); width: 18px; height: 18px;
+      accent-color: var(--terracotta); width: 18px; height: 18px; flex-shrink: 0;
     }
-    .opt-card strong { display: block; font-size: 0.85rem; color: var(--ink); }
+    .opt-card strong { display: block; font-size: 0.85rem; color: var(--ink); line-height: 1.2; }
     .opt-card span { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+
+    /* PREVENCIÓN DE AUTO-ZOOM EN DISPOSITIVOS MÓVILES (iOS/Android) */
+    .input-field, select, textarea, input {
+      font-size: 16px !important;
+    }
 
     .input-field {
       width: 100%; border: 1.5px solid var(--border); background: var(--cream-light);
       border-radius: var(--radius-sm); padding: 14px 16px; outline: none; color: var(--ink);
-      font-size: 0.92rem; transition: 0.2s;
+      transition: 0.2s; min-height: 48px;
     }
     .input-field:focus { border-color: var(--terracotta); background: var(--white); box-shadow: 0 0 0 4px rgba(168,72,45,0.08); }
 
@@ -374,18 +364,18 @@
 
     /* LATERAL DE RESUMEN */
     .quote-summary {
-      background: var(--green-dark); color: var(--white); padding: 48px 36px;
+      background: var(--green-dark); color: var(--white); padding: 46px 32px;
       display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid var(--border);
     }
-    .summary-head h3 { font-size: 2.2rem; color: var(--amber-light); margin-bottom: 8px; }
+    .summary-head h3 { font-size: 2.1rem; color: var(--amber-light); margin-bottom: 8px; }
     .summary-head p { font-size: 0.82rem; color: rgba(255,255,255,0.72); }
-    .summary-list { list-style: none; margin: 28px 0; display: grid; gap: 12px; font-size: 0.82rem; }
+    .summary-list { list-style: none; margin: 24px 0; display: grid; gap: 12px; font-size: 0.82rem; }
     .summary-list li {
       display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 8px;
     }
     .summary-list li span:first-child { color: rgba(255,255,255,0.68); }
     .summary-list li span:last-child { color: var(--amber-light); font-weight: 600; text-align: right; max-width: 180px; }
-    .summary-note { font-size: 0.74rem; color: rgba(255,255,255,0.55); text-align: center; margin-top: 14px; }
+    .summary-note { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-align: center; margin-top: 14px; line-height: 1.4; }
 
     /* OCULTAR RESUMEN Y AMPLIAR FORMULARIO EN MODO TEXTO LIBRE */
     .quote-container.mode-text-active {
@@ -398,26 +388,16 @@
 
     /* CONTACTO Y UBICACIÓN */
     .contact { padding: 110px 0; background: var(--white); }
-    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: center; }
-    .contact-info { display: grid; gap: 24px; margin-top: 36px; }
-    .contact-item { display: flex; gap: 18px; align-items: flex-start; }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+    .contact-info { display: grid; gap: 24px; margin-top: 32px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
     .contact-item .icon {
-      width: 46px; height: 46px; border-radius: 50%; background: var(--green-soft);
+      width: 44px; height: 44px; border-radius: 50%; background: var(--green-soft);
       display: grid; place-items: center; color: var(--terracotta); font-size: 1.2rem; flex: none;
     }
     .contact-item strong { display: block; font-size: 0.9rem; color: var(--green-dark); }
     .contact-item span { font-size: 0.84rem; color: var(--muted); }
-    .map-box { height: 420px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
-
-    /* FOOTER */
-    footer { background: #0e1e18; color: var(--white); padding: 60px 0 30px; }
-    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: start; }
-    .footer-links { display: flex; gap: 30px; color: rgba(255,255,255,0.65); font-size: 0.82rem; }
-    .footer-links a:hover { color: var(--amber-light); }
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,0.08); margin-top: 50px; padding-top: 24px;
-      color: rgba(255,255,255,0.4); font-size: 0.75rem; display: flex; justify-content: space-between;
-    }
+    .map-box { height: 400px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
 
     /* FOOTER ESTRUCTURADO Y ORGANIZADO */
     footer {
@@ -566,53 +546,100 @@
       gap: 12px;
     }
 
-    /* RESPONSIVO PARA TABLETS Y MÓVILES */
-    @media (max-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .copyright {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
     /* BOTÓN FLOTANTE WHATSAPP */
     .wa-float {
-      position: fixed; right: 26px; bottom: 26px; z-index: 99;
-      width: 62px; height: 62px; border-radius: 50%; background: #25D366; color: var(--white);
-      display: grid; place-items: center; font-size: 1.8rem; box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      position: fixed; right: 22px; bottom: 22px; z-index: 99;
+      width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: var(--white);
+      display: grid; place-items: center; font-size: 1.7rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       transition: 0.25s ease;
     }
     .wa-float:hover { transform: scale(1.08); }
 
-    /* RESPONSIVE */
-    @media(max-width: 1024px) {
+    /* ==========================================================================
+       OPTIMIZACIÓN RESPONSIVA COMPLETA (TABLETS Y SMARTPHONES)
+       ========================================================================== */
+    
+    @media (max-width: 1024px) {
+      .value-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .quote-container { grid-template-columns: 1fr; }
       .quote-summary { border-left: 0; border-top: 1px solid var(--border); }
-      .value-grid, .intro-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .service-grid, .event-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-meta { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     }
-    @media(max-width: 768px) {
-      .nav-links { display: none; }
+
+    @media (max-width: 768px) {
+      /* Espaciado general reducido en móvil */
+      .intro, .services, .quote-section, .contact, .value-banner { padding: 65px 0; }
+      .section-head { margin-bottom: 36px; }
+
+      /* Ajustes de Navegación Móvil */
       .menu-toggle { display: block; }
-      .hero { min-height: 720px; }
-      .hero h1 { font-size: 3.8rem; }
-      .quote-main { padding: 32px 24px; }
-      .quote-summary { padding: 36px 24px; }
-      .service-grid, .event-grid { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        gap: 16px;
+        padding: 26px 20px;
+        background: #122821;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: var(--radius-md);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        text-align: center;
+      }
+      .nav-links.active { display: flex; }
+
+      /* Hero Móvil */
+      .hero { min-height: 660px; align-items: center; }
+      .hero-content { padding: 130px 0 40px; text-align: center; }
+      .hero h1 { font-size: clamp(2.6rem, 9vw, 4rem); margin: 16px 0 20px; }
+      .hero-copy { font-size: 1rem; margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .hero-actions .btn { width: 100%; }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 0 26px;
+      }
+
+      /* Concepto */
+      .value-quote { font-size: 1.7rem; padding-left: 18px; border-left-width: 2px; }
+      .value-cards { grid-template-columns: 1fr; }
+
+      /* Cotizador en Móvil */
+      .quote-main { padding: 28px 18px; }
+      .quote-summary { padding: 32px 20px; }
+      .quote-mode-selector { flex-direction: column; border-radius: 20px; max-width: 100%; }
+      .mode-btn { padding: 10px 14px; text-align: center; }
+
+      /* Apilado inteligente de filas de 2 columnas */
+      .q-row-2col { grid-template-columns: 1fr !important; gap: 12px; }
       .grid-options { grid-template-columns: 1fr; }
-      .photo-grid-custom { height: auto; grid-template-columns: 1fr; }
-      .photo-grid-custom .img-small { height: 220px; }
+
+      /* Galería e Infraestructura en Móvil */
+      .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
+      .gallery-card { height: 290px; }
+
+      .service-grid { grid-template-columns: 1fr; gap: 14px; }
+      .service { padding: 24px 20px; }
+
+      /* Mapa */
+      .map-box { height: 300px; }
+    }
+
+    @media (max-width: 576px) {
+      .container { width: 90%; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .copyright { flex-direction: column; text-align: center; gap: 8px; }
+      
+      .brand-text strong { font-size: 1.25rem; }
+      .brand-mark-circle { width: 44px; height: 44px; }
+
+      .wa-float { width: 52px; height: 52px; font-size: 1.5rem; right: 16px; bottom: 16px; }
     }
   </style>
 </head>
@@ -623,13 +650,13 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="Finca San Blas">
-        <!-- Marco circular con tu logo -->
+        <!-- Marco circular con logo -->
         <div class="brand-mark-circle">
           <img src="resources/logo/logo_finca.jpeg" alt="Logo Finca San Blas">
         </div>
         <div class="brand-text">
           <strong>Finca San Blas</strong>
-          <span>Salón & Jardín · Toluca</span>
+          <span>Salón & Jardín</span>
         </div>
       </a>
 
@@ -641,9 +668,9 @@
         <a class="nav-cta" href="#cotiza">Cotizar mi Evento</a>
       </div>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">☰</button>
     </div>
-</nav>
+  </nav>
 
   <main>
 
@@ -659,16 +686,15 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-terracotta" href="#cotiza">Cotizar mi Evento en 2 min →</a>
+          <a class="btn btn-terracotta" href="#cotiza">Cotizar mi Evento en 2 min</a>
           <a class="btn btn-light" href="#espacio">Conoce la Finca</a>
         </div>
       </div>
 
       <div class="container hero-meta">
-        <div><strong>Hasta 100 personas</strong>Aforo óptimo cómodo</div>
-        <div><strong>Salón + Jardín</strong>Integración de ambientes</div>
-        <div><strong>Corredor & Pozo</strong>Cantera rosa artesanal</div>
-        <div><strong>Cocina Equipada</strong>Plancha y barra Talavera</div>
+        <div><strong>Salón + Jardín</strong>Integración de Ambientes</div>
+        <div><strong>Corredor & Pozo</strong>Cantera Rosa Artesanal</div>
+        <div><strong>Cocina Equipada</strong>Plancha y Barra de Talavera</div>
       </div>
     </section>
 
@@ -682,15 +708,15 @@
         <div class="value-cards">
           <div class="v-card">
             <h4>Menos Proveedores</h4>
-            <p>Salón, jardín, cocina industrial, infraestructura y mobiliario listos en una sola contratación.</p>
+            <p>Salón, jardín, cocina, infraestructura y mobiliario listos en una sola contratación.</p>
           </div>
           <div class="v-card">
             <h4>Detalles Artesanales</h4>
-            <p>Pisos de barro, vigas de madera, lavabos de Talavera y acabados tradicionales cálidos.</p>
+            <p>Lavabos de talavera y acabados tradicionales cálidos.</p>
           </div>
           <div class="v-card">
             <h4>Iluminación Acogedora</h4>
-            <p>Arbotantes de luz ámbar en salón y guirnaldas estilo Edison en el corredor exterior.</p>
+            <p>Arbotantes de luz ámbar en salón y guirnaldas en el corredor exterior.</p>
           </div>
           <div class="v-card">
             <h4>Flexibilidad Total</h4>
@@ -913,7 +939,7 @@
                 <!-- 1. DATOS BÁSICOS & CONTACTO -->
                 <div class="q-group">
                   <label>1. Datos principales de contacto e información general: *</label>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div class="q-row-2col">
                     <div>
                       <input type="text" id="custName" class="input-field" placeholder="Nombre completo *" oninput="updateSummary()">
                       <span class="error-msg" id="errCustName">Ingresa un nombre válido</span>
@@ -924,7 +950,7 @@
                     </div>
                   </div>
 
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div class="q-row-2col">
                     <div>
                       <label style="font-size: 0.78rem; font-weight: 600; margin-bottom: 4px;">Fecha del evento: *</label>
                       <input type="date" id="eventDate" class="input-field" onchange="updateSummary()">
@@ -961,7 +987,7 @@
                   </div>
 
                   <label style="font-size: 0.8rem; font-weight: 600; margin-top: 8px; margin-bottom: 6px; display: block;">Horario planeado (Hora inicio y fin): *</label>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="q-row-2col">
                     <div>
                       <span style="font-size: 0.72rem; color: var(--muted);">Hora de inicio:</span>
                       <input type="time" id="startTime" class="input-field" value="14:00" onchange="updateSummary()">
@@ -1035,7 +1061,7 @@
                 <!-- 8. BANQUETE & MESEROS -->
                 <div class="q-group">
                   <label>8. Alimentos y Servicio de Meseros:</label>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div class="q-row-2col">
                     <select id="foodFormat" class="input-field" onchange="updateSummary()">
                       <option value="Plato servido a la mesa (1 a 3 tiempos)">Plato servido a la mesa</option>
                       <option value="Buffet / Taquiza / Cazuelas">Buffet / Taquiza / Cazuelas</option>
@@ -1076,7 +1102,7 @@
                   <label for="visitDate">11. ¿Te gustaría agendar una visita presencial a la Finca? <span>(Opcional)</span></label>
                   <input type="date" id="visitDate" class="input-field" onchange="updateSummary()">
                   <span class="error-msg" id="errVisitDate">No puedes seleccionar el día de hoy o fechas pasadas</span>
-                  <span style="font-size: 0.74rem; color: var(--muted); display: block; margin-top: 4px;">Las visitas se agendan con al menos 24 horas de anticipación y estan sujetas a disponibilidad.</span>
+                  <span style="font-size: 0.74rem; color: var(--muted); display: block; margin-top: 4px;">Las visitas se agendan con al menos 24 horas de anticipación y están sujetas a disponibilidad.</span>
                 </div>
 
                 <!-- 12. NOTAS ADICIONALES Y CIERRE -->
@@ -1107,7 +1133,7 @@
               <ul class="summary-list">
                 <li><span>Fecha Evento:</span> <span id="sumDate">Por definir</span></li>
                 <li><span>Tipo Evento:</span> <span id="sumType">Bautizo / Primera Com.</span></li>
-                <li><span>Invitados:</span> <span id="sumGuests">100 personas</span></li>
+                <li><span>Invitados:</span> <span id="sumGuests">50 a 80 personas</span></li>
                 <li><span>Horario:</span> <span id="sumSchedule">14:00 - 20:00 hrs</span></li>
                 <li><span>Presupuesto:</span> <span id="sumBudget">$15k - $25k MXN</span></li>
                 <li><span>Carpa:</span> <span id="sumTent">Carpa completa</span></li>
@@ -1166,7 +1192,7 @@
         </div>
 
         <div class="map-box">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.8749264480575!2d-99.69658342477933!3d19.236004782001796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd897df4e3cb4b%3A0xca1afac4d7bda372!2sSal%C3%B3n%20San%20Blas!5e1!3m2!1ses-419!2smx!4v1791580476051!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.8749264480575!2d-99.69658342477933!3d19.236004782001796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd897df4e3cb4b%3A0xca1afac4d7bda372!2sSal%C3%B3n%20San%20Blas!5e1!3m2!1ses-419!2smx!4v1791580476051!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </section>
@@ -1277,8 +1303,27 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       initDatePickers();
+      initMobileMenu();
       updateSummary();
     });
+
+    function initMobileMenu() {
+      const toggle = document.getElementById('menuToggle');
+      const links = document.getElementById('navLinks');
+
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          links.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en cualquier enlace
+        links.querySelectorAll('a').forEach(anchor => {
+          anchor.addEventListener('click', () => {
+            links.classList.remove('active');
+          });
+        });
+      }
+    }
 
     function initDatePickers() {
       const today = new Date();
@@ -1366,7 +1411,7 @@
       }
 
       const guestRadio = document.querySelector('input[name="guests"]:checked');
-      const guests = guestRadio ? guestRadio.value : '100 personas';
+      const guests = guestRadio ? guestRadio.value : '50 a 80 personas';
 
       const start = document.getElementById('startTime').value || '14:00';
       const end = document.getElementById('endTime').value || '20:00';
@@ -1526,7 +1571,7 @@
         const eventType = eventTypeSelect === 'Otro' ? `Otro (${document.getElementById('otherEventType').value.trim()})` : eventTypeSelect;
 
         const guestRadio = document.querySelector('input[name="guests"]:checked');
-        const guests = guestRadio ? guestRadio.value : '100 personas';
+        const guests = guestRadio ? guestRadio.value : '50 a 80 personas';
 
         const start = document.getElementById('startTime').value || '14:00';
         const end = document.getElementById('endTime').value || '20:00';
