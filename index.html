@@ -1017,6 +1017,7 @@
                     <div>
                       <label style="font-size: 0.78rem; font-weight: 600; margin-bottom: 4px;">Tipo de evento: *</label>
                       <select id="eventType" class="input-field" onchange="toggleOtherEventType(); updateSummary();">
+                        <option value="Por definir" selected>Por definir / Selecciona opción</option>
                         <option value="Bautizo / Primera Comunión">Bautizo / Primera Comunión</option>
                         <option value="Cumpleaños / Aniversario">Cumpleaños / Aniversario</option>
                         <option value="Boda Íntima / XV Años">Boda Íntima / XV Años</option>
@@ -1035,34 +1036,39 @@
 
                 <!-- 2. AFORO & HORARIOS EXACTOS -->
                 <div class="q-group">
-                  <label>2. Número de invitados estimado y horario de evento:</label>
-                  <div class="grid-options" style="margin-bottom: 12px;">
-                    <label class="opt-card"><input type="radio" name="guests" value="Menos de 30 personas" onchange="updateSummary()"> <div><strong>Menos de 30 personas</strong><span>Evento chico</span></div></label>
-                    <label class="opt-card"><input type="radio" name="guests" value="30 a 50 personas" onchange="updateSummary()"> <div><strong>30 a 50 personas</strong><span>Evento Íntimo</span></div></label>
-                    <label class="opt-card"><input type="radio" name="guests" value="50 a 80 personas" checked onchange="updateSummary()"> <div><strong>50 a 80 personas</strong><span>Aforo Recomendado</span></div></label>
-                    <label class="opt-card"><input type="radio" name="guests" value="Más de 80 personas" onchange="updateSummary()"> <div><strong>Más de 80 personas</strong><span>Gran Celebración</span></div></label>
-                    <label class="opt-card"><input type="radio" name="guests" value="Aún por definir" onchange="updateSummary()"> <div><strong>Aún por definir</strong><span>Recomiéndenme</span></div></label>
-                  </div>
+                    <label>2. Número de invitados estimado y horario de evento:</label>
+                    <div class="grid-options" style="margin-bottom: 12px;">
+                        <label class="opt-card"><input type="radio" name="guests" value="Por definir" checked onchange="updateSummary()"> <div><strong>Por definir</strong><span>Aún no lo sé</span></div></label>
+                        <label class="opt-card"><input type="radio" name="guests" value="Menos de 30 personas" onchange="updateSummary()"> <div><strong>Menos de 30 personas</strong><span>Evento chico</span></div></label>
+                        <label class="opt-card"><input type="radio" name="guests" value="30 a 50 personas" onchange="updateSummary()"> <div><strong>30 a 50 personas</strong><span>Evento Íntimo</span></div></label>
+                        <label class="opt-card"><input type="radio" name="guests" value="50 a 80 personas" onchange="updateSummary()"> <div><strong>50 a 80 personas</strong><span>Aforo Recomendado</span></div></label>
+                        <label class="opt-card"><input type="radio" name="guests" value="Más de 80 personas" onchange="updateSummary()"> <div><strong>Más de 80 personas</strong><span>Gran Celebración</span></div></label>
+                    </div>
 
-                  <label style="font-size: 0.8rem; font-weight: 600; margin-top: 8px; margin-bottom: 6px; display: block;">Horario planeado (Hora inicio y fin): *</label>
-                  <div class="q-row-2col">
-                    <div>
-                      <span style="font-size: 0.72rem; color: var(--muted);">Hora de inicio:</span>
-                      <input type="time" id="startTime" class="input-field" value="14:00" onchange="updateSummary()">
+                    <label style="font-size: 0.8rem; font-weight: 600; margin-top: 8px; margin-bottom: 6px; display: block;">
+                        Horario planeado (Hora inicio y fin): <span>(Opcional, entre 7:00 hrs y 23:30 hrs)</span>
+                    </label>
+                    <div class="q-row-2col">
+                        <div>
+                        <span style="font-size: 0.72rem; color: var(--muted);">Hora de inicio:</span>
+                        <input type="time" id="startTime" class="input-field" min="07:00" max="23:30" onchange="validateTimeInput(this); updateSummary();">
+                        <span class="error-msg" id="errStartTime">El horario debe estar entre 07:00 y 23:30 hrs</span>
+                        </div>
+                        <div>
+                        <span style="font-size: 0.72rem; color: var(--muted);">Hora de término:</span>
+                        <input type="time" id="endTime" class="input-field" min="07:00" max="23:30" onchange="validateTimeInput(this); updateSummary();">
+                        <span class="error-msg" id="errEndTime">El horario debe estar entre 07:00 y 23:30 hrs</span>
+                        </div>
                     </div>
-                    <div>
-                      <span style="font-size: 0.72rem; color: var(--muted);">Hora de término:</span>
-                      <input type="time" id="endTime" class="input-field" value="20:00" onchange="updateSummary()">
-                    </div>
-                  </div>
                 </div>
 
                 <!-- 3. PRESUPUESTO PROYECTADO CON MONTO MANUAL -->
                 <div class="q-group">
                   <label>3. Presupuesto estimado para la propuesta:</label>
                   <div class="grid-options" style="margin-bottom: 10px;">
+                    <label class="opt-card"><input type="radio" name="budget" value="Por definir" checked onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Por definir</strong><span>Aún sin calcular</span></div></label>
                     <label class="opt-card"><input type="radio" name="budget" value="Menos de $15,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Esencial</strong><span>< $15,000 MXN</span></div></label>
-                    <label class="opt-card"><input type="radio" name="budget" value="$15,000 a $25,000 MXN" checked onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Estándar</strong><span>$15k - $25k MXN</span></div></label>
+                    <label class="opt-card"><input type="radio" name="budget" value="$15,000 a $25,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Estándar</strong><span>$15k - $25k MXN</span></div></label>
                     <label class="opt-card"><input type="radio" name="budget" value="$25,000 a $40,000 MXN" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Prémium</strong><span>$25k - $40k MXN</span></div></label>
                     <label class="opt-card"><input type="radio" name="budget" value="Custom" id="budgetCustomRadio" onchange="toggleCustomBudget(); updateSummary();"> <div><strong>Ingresar monto</strong><span>Especificar cantidad</span></div></label>
                   </div>
@@ -1087,10 +1093,10 @@
                 <div class="q-group">
                   <label>5. Cobertura para el jardín (Carpa):</label>
                   <div class="grid-options">
-                    <label class="opt-card"><input type="radio" name="tent" value="Carpa estructurada completa" checked onchange="updateSummary()"> <div><strong>Carpa Completa</strong><span>Protección viento/lluvia</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Por definir" checked onchange="updateSummary()"> <div><strong>Por definir</strong><span>Evaluar en visita</span></div></label>
+                    <label class="opt-card"><input type="radio" name="tent" value="Carpa estructurada completa" onchange="updateSummary()"> <div><strong>Carpa Completa</strong><span>Protección viento/lluvia</span></div></label>
                     <label class="opt-card"><input type="radio" name="tent" value="Toldo ligero para sol" onchange="updateSummary()"> <div><strong>Toldo Ligero</strong><span>Solo para sol</span></div></label>
                     <label class="opt-card"><input type="radio" name="tent" value="Sin Carpa, uso de salón" onchange="updateSummary()"> <div><strong>Sin Carpa</strong><span>Uso de salón</span></div></label>
-                    <label class="opt-card"><input type="radio" name="tent" value="Por definir" onchange="updateSummary()"> <div><strong>Por definir</strong><span>Evaluar en visita</span></div></label>
                   </div>
                 </div>
 
@@ -1098,10 +1104,10 @@
                 <div class="q-group">
                   <label>6. Estilo de Mobiliario deseado:</label>
                   <div class="grid-options">
-                    <label class="opt-card"><input type="radio" name="furniture" value="Rústico Elegante (Crossback/Madera)" checked onchange="updateSummary()"> <div><strong>Rústico Elegante</strong><span>Silla Crossback / Madera</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Por definir" checked onchange="updateSummary()"> <div><strong>Por definir</strong><span>Sin seleccionar</span></div></label>
+                    <label class="opt-card"><input type="radio" name="furniture" value="Rústico Elegante (Crossback/Madera)" onchange="updateSummary()"> <div><strong>Rústico Elegante</strong><span>Silla Crossback / Madera</span></div></label>
                     <label class="opt-card"><input type="radio" name="furniture" value="Clásico (Silla Tiffany)" onchange="updateSummary()"> <div><strong>Clásico Elegante</strong><span>Silla Tiffany</span></div></label>
                     <label class="opt-card"><input type="radio" name="furniture" value="Sillas Tipo Sansonite" onchange="updateSummary()"> <div><strong>Práctico</strong><span>Sillas Tipo Sansonite</span></div></label>
-                    <label class="opt-card"><input type="radio" name="furniture" value="Por definir" onchange="updateSummary()"> <div><strong>Por definir</strong></div></label>
                   </div>
                 </div>
 
@@ -1121,14 +1127,15 @@
                   <label>8. Alimentos y Servicio de Meseros: <span>(En caso de elegir el servicio de Finca San Blas, se te proporcionará el catálogo una vez que envies esta cotización)</span></label>
                   <div class="q-row-2col">
                     <select id="foodFormat" class="input-field" onchange="updateSummary()">
+                      <option value="Por definir" selected>Por definir / Selecciona formato</option>
                       <option value="Plato servido a la mesa (1 a 4 tiempos)">Plato servido a la mesa (1 a 4 tiempos)</option>
                       <option value="Servicio de Alimentos/Catering de Finca San Blas">Servicio de Alimentos/Catering Finca San Blas</option>
                       <option value="Loza de cubiertos, cristalería/vasos y platos">Loza de cubiertos, cristalería/vasos y platos</option>
                       <option value="Uso de cocina para mi catering">Catering propio (uso cocina)</option>
-                      <option value="Aún no lo decido">Aún por definir</option>
                     </select>
                     <select id="serverOption" class="input-field" onchange="updateSummary()">
-                      <option value="Incluir equipo completo de meseros" selected>Incluir equipo completo de meseros</option>
+                      <option value="Por definir" selected>Por definir / Selecciona opción</option>
+                      <option value="Incluir equipo completo de meseros">Incluir equipo completo de meseros</option>
                       <option value="Solo apoyo básico de barra">Solo apoyo básico de barra</option>
                       <option value="Yo contrataré meseros">Tengo mis meseros</option>
                     </select>
@@ -1139,10 +1146,10 @@
                 <div class="q-group">
                   <label>9. Detalles de Audio y Música para el evento:</label>
                   <select id="audioOption" class="input-field" onchange="updateSummary()">
+                    <option value="Por definir" selected>Por definir / Sin requisitos especiales</option>
                     <option value="Llevaré DJ Profesional (requiere instalación completa)">Llevaré mi propio DJ profesional (solo requiere conexión eléctrica)</option>
                     <option value="Llevaré Grupo Musical / Banda en vivo (solo requiere conexión eléctrica)">Traeré Grupo Musical en vivo (solo requiere conexión eléctrica)</option>
                     <option value="Requiero Equipo de Audio ambiental de la Finca">Deseo contratar audio/música ambiental de la Finca</option>
-                    <option value="Sin música especial / Por definir">Por definir / Sin requisitos especiales</option>
                   </select>
                 </div>
 
@@ -1191,12 +1198,12 @@
 
               <ul class="summary-list">
                 <li><span>Fecha Evento:</span> <span id="sumDate">Por definir</span></li>
-                <li><span>Tipo Evento:</span> <span id="sumType">Bautizo / Primera Com.</span></li>
-                <li><span>Invitados:</span> <span id="sumGuests">50 a 80 personas</span></li>
-                <li><span>Horario:</span> <span id="sumSchedule">14:00 - 20:00 hrs</span></li>
-                <li><span>Presupuesto:</span> <span id="sumBudget">$15k - $25k MXN</span></li>
-                <li><span>Carpa:</span> <span id="sumTent">Carpa completa</span></li>
-                <li><span>Mobiliario:</span> <span id="sumFurniture">Rústico Elegante</span></li>
+                <li><span>Tipo Evento:</span> <span id="sumType">Por definir</span></li>
+                <li><span>Invitados:</span> <span id="sumGuests">Por definir</span></li>
+                <li><span>Horario:</span> <span id="sumSchedule">Por definir</span></li>
+                <li><span>Presupuesto:</span> <span id="sumBudget">Por definir</span></li>
+                <li><span>Carpa:</span> <span id="sumTent">Por definir</span></li>
+                <li><span>Mobiliario:</span> <span id="sumFurniture">Por definir</span></li>
                 <li><span>Mesas Esp.:</span> <span id="sumSpecialAreas">Ninguna</span></li>
                 <li><span>Audio/Música:</span> <span id="sumAudio">Por definir</span></li>
                 <li><span>Complementos:</span> <span id="sumExtras">Ninguno</span></li>
@@ -1531,6 +1538,29 @@
       document.getElementById('sumExtras').textContent = extrasList.length > 0 ? extrasList.join(', ') : 'Ninguno';
       document.getElementById('sumVisitDate').textContent = visitDateVal;
     }
+
+    function validateTimeInput(input) {
+        if (!input.value) {
+            input.classList.remove('invalid');
+            const errEl = document.getElementById(input.id === 'startTime' ? 'errStartTime' : 'errEndTime');
+            if (errEl) errEl.classList.remove('visible');
+            return;
+        }
+
+        const min = "07:00";
+        const max = "23:30";
+        const errId = input.id === 'startTime' ? 'errStartTime' : 'errEndTime';
+        const errEl = document.getElementById(errId);
+
+        if (input.value < min || input.value > max) {
+            input.classList.add('invalid');
+            if (errEl) errEl.classList.add('visible');
+            input.value = ''; // Restablece el campo al estar fuera de rango
+        } else {
+            input.classList.remove('invalid');
+            if (errEl) errEl.classList.remove('visible');
+        }
+        }
 
     function validateForm() {
       let isValid = true;
